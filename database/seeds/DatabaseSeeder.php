@@ -6,11 +6,14 @@ class DatabaseSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        //dar de alta el archivo que queremos que se pueda emigrar
+        $this->call(PermissionsTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
+        $this->call(CitasTableSeeder::class);
+        $this->call(ExpedientesTableSeeder::class);
+        $this->call(CuentasTableSeeder::class);
     }
 }
