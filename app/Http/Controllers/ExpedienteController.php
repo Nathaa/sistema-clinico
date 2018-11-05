@@ -61,10 +61,17 @@ class expedienteController extends Controller
         return view('expedientes.show', compact('expediente'));
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param int $id
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function showCitas(Expedientes $expediente)
     {
         $idExpediente = $expediente->id;
-        $citas = Cuentas::where('expediente_id', $idExpediente)->get();
+        $citas = Citas::where('expediente_id', $idExpediente)->get();
 
         return view('expedientes.showCitas', compact('citas'));
     }

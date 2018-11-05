@@ -24,7 +24,7 @@
                        
                         
                         <a href="{{ route('expedientes.showCitas', $expediente->id) }}" class="btn btn-sm btn-danger" >citas</a>
-                        //<a href="{{ route('cuentas.index') }}" class="btn btn-sm btn-danger" >cuentas</a>
+                       
                 </div>
             </div>
            
