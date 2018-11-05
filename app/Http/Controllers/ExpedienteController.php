@@ -55,10 +55,18 @@ class expedienteController extends Controller
      */
     public function show(Expedientes $expediente)
     {
-        $citas = Citas::Where('id')->get();
+        $citas = Citas::get();
         $cuentas = Cuentas::get();
 
         return view('expedientes.show', compact('expediente', 'citas', 'cuentas'));
+    }
+
+    public function showCitas(Expedientes $expediente)
+    {
+        $idExpediente = $expediente->id;
+        $citas = Cuentas::where('expediente_id', $idExpediente)->get();
+
+        return view('expedientes.showCitas', compact('citas'));
     }
 
     /**
