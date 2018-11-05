@@ -23,8 +23,8 @@
                 <div class="card-footer">
                        
                         
-                        <a href="{{ route('citas.index') }}" class="btn btn-sm btn-danger" >citas</a>
-                        <a href="{{ route('cuentas.index') }}" class="btn btn-sm btn-danger" >cuentas</a>
+                        <a href="{{ route('expedientes.showCitas', $expediente->id) }}" class="btn btn-sm btn-danger" >citas</a>
+                        //<a href="{{ route('cuentas.index') }}" class="btn btn-sm btn-danger" >cuentas</a>
                 </div>
             </div>
            

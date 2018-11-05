@@ -58,7 +58,7 @@ class expedienteController extends Controller
         $citas = Citas::get();
         $cuentas = Cuentas::get();
 
-        return view('expedientes.show', compact('expediente', 'citas', 'cuentas'));
+        return view('expedientes.show', compact('expediente'));
     }
 
     public function showCitas(Expedientes $expediente)
