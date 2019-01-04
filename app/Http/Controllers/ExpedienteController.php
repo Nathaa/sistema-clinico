@@ -28,7 +28,9 @@ class expedienteController extends Controller
      */
     public function create()
     {
-        return view('expedientes.create');
+        $arraySexo = array('Masculino', 'Femenino');
+
+        return view('expedientes.create', compact('arraySexo'));
     }
 
     /**

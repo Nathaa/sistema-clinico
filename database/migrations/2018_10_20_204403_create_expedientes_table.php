@@ -17,7 +17,7 @@ class CreateExpedientesTable extends Migration
             $table->date('nacimiento');
             $table->integer('edad');
             $table->string('dirreccion');
-            $table->integer('telefono');
+            $table->string('telefono');
             $table->string('sexo');
             $table->string('ocupacion');
             $table->string('tratamiento');

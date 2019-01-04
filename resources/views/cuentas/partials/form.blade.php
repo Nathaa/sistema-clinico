@@ -3,10 +3,11 @@
         {{ Form::number('monto',null,['class' => 'form-control']) }}
     </div>
     
-    <div class="form-group">
-            {{ Form::label('descripcion', 'Descripcion del servicio cancelado ')}}
+<div class="form-group">
+            {{ Form::label('descripcion', 'Descripción del servicio cancelado ')}}
             {{ Form::text('descripcion',null,['class' => 'form-control']) }}
-    </div>
+</div>
+  
 
 <div class="form-group">
                 {!! Form::label('cita_id', 'Cita del paciente') !!}
