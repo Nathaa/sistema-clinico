@@ -64,8 +64,11 @@ Route::middleware(['auth'])->group(function () {
     Route::put('expedientes/{expediente}', 'ExpedienteController@update')->name('expedientes.update')
  ->middleware('permission:expedientes.update');
 
-    Route::put('expedientes/{expediente}/citas', 'ExpedienteController@showCitas')->name('expedientes.showCitas')
- ->middleware('permission:expedientes.show');
+    Route::get('expedientes/{expediente}/citas', 'ExpedienteController@showCitas')->name('expedientes.showCitas')
+ ->middleware('permission:expedientes.showCitas');
+
+    Route::get('expedientes/{expediente}/cuentas', 'ExpedienteController@showCuentas')->name('expedientes.showCuentas')
+ ->middleware('permission:expedientes.showCuentas');
 
     Route::get('expedientes/{expediente}', 'ExpedienteController@show')->name('expedientes.show')
  ->middleware('permission:expedientes.show');

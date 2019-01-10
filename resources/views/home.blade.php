@@ -1,4 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.admi')
+
+@section('js')
+@endsection
 
 @section('content')
 <div class="container">
@@ -15,9 +18,14 @@
                     @endif
 
                     You are logged in!
+                    
                 </div>
             </div>
         </div>
     </div>
 </div>
+@endsection
+
+@section('css')
+
 @endsection
