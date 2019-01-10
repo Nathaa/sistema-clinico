@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 cuentas
+                 Registros de cobros
                  @can('cuentas.create')
                  <a href="{{ route('cuentas.create') }}" 
                  class="btn btn-sm btn-primary pull-right">

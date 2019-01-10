@@ -1,23 +1,23 @@
 <div class="form-group">
-    {{ Form::label('descripcion', 'Descripcion de la cita')}}
+    {{ Form::label('descripcion', 'Descripción de la cita')}}
     {{ Form::text('descripcion',null,['class' => 'form-control']) }}
 </div>
 
 <div class="form-group">
-        {{ Form::label('fecha', 'Fecha de la cita')}}
+        {{ Form::label('fecha', 'Fecha')}}
         {{ Form::date('fecha',null,['class' => 'form-control']) }}
 </div>
 
 <div class="form-group">
-        {{ Form::label('hora', 'Hora de la cita')}}
+        {{ Form::label('hora', 'Hora')}}
         {{ Form::text('hora',null,['class' => 'form-control']) }}
 </div>
 
 <div class="form-group">
-                {!! Form::label('expediente_id', 'Expediente del paciente') !!}
+                {!! Form::label('expediente_id', 'Seleccione el paciente') !!}
                 <div class="form-group">
                     <select name="expediente_id" id= "expediente_id" class="form-control" required>
-                        <option value="">--Expediente--</option>
+                        <option value="">--Paciente--</option>
                         @foreach ($expedientes as $expediente)
                         <option value="{{ $expediente->id }}"> {{ $expediente->name}}</option>  
                         @endforeach
