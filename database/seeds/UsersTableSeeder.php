@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
         User::create([
          'name' => 'Nathaly Amaya',
          'email' => 'mamita.a53@gmail.com',
-         'password' => bcrypt('fresitayy'),
+         'password' => bcrypt('123456'),
         ]);
 
         DB::table('role_user')->insert([
