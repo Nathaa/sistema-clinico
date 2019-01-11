@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admi')
 
 @section('content')
 <div class="container">
@@ -53,6 +53,22 @@
                                               Eliminar
                                           </button>
                                         {!! Form::close() !!}
+                                         @endcan
+                                     </td>
+                                     <td width="10px">
+                                        @can('expedientes.showCitas')
+                                          <a href="{{ route('expedientes.showCitas', $expediente->id) }}"
+                                          class="btn btn-sm btn-default">
+                                             Citas
+                                          </a>
+                                         @endcan
+                                     </td>
+                                     <td width="10px">
+                                        @can('expedientes.showCuentas')
+                                          <a href="{{ route('expedientes.showCuentas', $expediente->id) }}"
+                                          class="btn btn-sm btn-default">
+                                             Cuentas
+                                          </a>
                                          @endcan
                                      </td>
                         </tr>

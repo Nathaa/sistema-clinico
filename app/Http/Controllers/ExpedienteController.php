@@ -79,6 +79,21 @@ class expedienteController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param int $id
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showCuentas(Expedientes $expediente)
+    {
+        $idExpediente = $expediente->id;
+        $cuentas = Cuentas::where('expediente_id', $idExpediente)->get();
+
+        return view('expedientes.showCuentas', compact('cuentas'));
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param int $id

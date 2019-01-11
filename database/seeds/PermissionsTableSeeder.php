@@ -113,6 +113,18 @@ class PermissionsTableSeeder extends Seeder
         ]);
 
         Permission::create([
+            'name' => 'Navegar cuentas expedientes',
+            'slug' => 'expedientes.showCuentas',
+            'description' => 'Lista y navega todos las cuentas en el expedientes del sistema',
+        ]);
+
+        Permission::create([
+            'name' => 'Ver citas en expediente',
+            'slug' => 'expedientes.showCitas',
+            'description' => 'ver en detalle cada cita en el expediente del sistema',
+        ]);
+
+        Permission::create([
             'name' => 'creacion de expedientes',
             'slug' => 'expedientes.create',
             'description' => 'Crear cualquier dato de un expediente del sistema',

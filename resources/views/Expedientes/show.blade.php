@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admi')
 
 @section('content')
 <div class="container">
@@ -24,6 +24,7 @@
                        
                         
                         <a href="{{ route('expedientes.showCitas', $expediente->id) }}" class="btn btn-sm btn-danger" >citas</a>
+                        <a href="{{ route('expedientes.showCuentas', $expediente->id) }}" class="btn btn-sm btn-danger" >cuentas</a>
                        
                 </div>
             </div>
