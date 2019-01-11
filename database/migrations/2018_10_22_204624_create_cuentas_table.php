@@ -15,6 +15,7 @@ class CreateCuentasTable extends Migration
             $table->increments('id');
             $table->double('monto');
             $table->string('descripcion');
+            $table->date('fechaPago');
             $table->integer('cita_id');
             $table->foreign('cita_id')->references('id')->on('citas');
             $table->integer('expediente_id');

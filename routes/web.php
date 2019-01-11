@@ -138,4 +138,21 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('citas/{cita}/edit', 'CitaController@edit')->name('citas.edit')
     ->middleware('permission:citas.edit');
+
+    //Consultas
+
+    Route::get('consultaPagos', 'ConsultaPagoController@index')->name('consultaPagos.index')
+    ->middleware('permission:consultaPagos.index');
+
+    Route::get('consultaPagos/create', 'ConsultaPagoController@create')->name('consultaPagos.create')
+    ->middleware('permission:consultaPagos.create');
+
+    Route::post('consultaPagos/store', 'ConsultaPagoController@store')->name('consultaPagos.store')
+    ->middleware('permission:consultaPagos.create');
+
+    Route::get('consultaPagos/{consultaspagos}', 'ConsultaPagoController@show')->name('consultaPagos.show')
+    ->middleware('permission:consultaPagos.show');
+
+    Route::delete('consultaPagos/{consultaspagos}', 'ConsultaPagoController@destroy')->name('consultaPagos.destroy')
+    ->middleware('permission:consultaPagos.destroy');
 });

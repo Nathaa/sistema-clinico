@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cuentas extends Model
 {
     protected $fillable = [
-        'monto', 'descripcion', 'cita_id', 'expediente_id',
+        'monto', 'descripcion', 'fechaPago', 'cita_id', 'expediente_id',
     ];
 
     public function cita()

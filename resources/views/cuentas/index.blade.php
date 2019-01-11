@@ -21,6 +21,7 @@
                             <tr>
                                 <th width="10px">ID</th>
                                 <th>Cuenta</th>
+                                <th>Monto</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
@@ -28,7 +29,8 @@
                         @foreach($cuentas as $cuenta)
                         <tr>
                             <td>{{ $cuenta->id }}</td>
-                            <td>{{ $cuenta->monto }}</td>
+                            <td>{{ $cuenta->descripcion }}</td>
+                            <td>$ {{ $cuenta->monto }}</td>
                             <td width="10px">
                                @can('cuentas.show')
                                  <a href="{{ route('cuentas.show', $cuenta->id) }}"
