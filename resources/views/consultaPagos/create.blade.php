@@ -1,4 +1,4 @@
-@extends('layouts.admi')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -6,15 +6,15 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 Cita
+                 Consultas pagos
                 </div>
 
                 <div class="panel-body">
-                  <p><strong>Descripción: </strong> {{ $cita->descripcion }}</p>
-                  <p><strong>Fecha de Cita: </strong> {{ $cita->fecha }}</p>
-                  <p><strong>Hora: </strong> {{ $cita->hora }}</p>
-                  <p><strong>Paciente: </strong> {{ $cita->expediente->name }}</p>
+                 {!! Form::open(['route' => 'consultaPagos.store']) !!}
                   
+                 @include('consultaPagos.partials.form')
+
+                 {!! Form::close() !!}
                 </div>
             </div>
         </div>

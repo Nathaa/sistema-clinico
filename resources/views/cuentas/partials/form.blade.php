@@ -8,6 +8,10 @@
             {{ Form::text('descripcion',null,['class' => 'form-control']) }}
 </div>
   
+<div class="form-group">
+        {{ Form::label('fechaPago', 'Fecha de Pago')}}
+        {{ Form::date('fechaPago',null,['class' => 'form-control']) }}
+</div>
 
 <div class="form-group">
                 {!! Form::label('cita_id', 'Cita del paciente') !!}
@@ -32,7 +36,7 @@
                         <option value="{{ $expediente->id }}"> {{ $expediente->name}}</option>  
                         @endforeach
                     </select>    
-                </div>
+</div>
                
                 
 </div>
