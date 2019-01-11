@@ -7,17 +7,41 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 cuentas del paciente
+                 Cuentas del paciente: <strong>{{$nombrePaciente}}</strong>
                 </div>
-                @foreach($cuentas as $cuenta)
-                <tr>
+                
+                
                 <div class="panel-body">
-                  <p><strong>id</strong> {{ $cuenta->id }}</p>
-                  <p><strong>Monto</strong> {{ $cuenta->monto }}</p>
-                  <p><strong>Descripcion</strong> {{ $cuenta->descripcion }}</p>
+                   <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                
+                                <th>Descripción</th>
+                                <th>Fecha [Año-Mes-Día]</th>
+                                <th>Monto</th>
+
+                             </tr>
+                        </thead>
+                   <tbody>
+                    @foreach($cuentas as $cuenta)
+                        <tr>
+                            <td>{{ $cuenta->descripcion }}</td>
+                            <td> {{ $cuenta->fechaPago }}</td>
+                            <td>$ {{ $cuenta->monto }}</td>
+                            
+                        </tr>
+                     @endforeach
+                    
+                   </tbody>
+                  
+                            
+                  </table>
+                   <p>Pagos efectuados : <strong>{{ $cantidad }}</strong></p>
+                   <p>Monto Total : <strong>${{ $montoTotal }}</strong></p>
+                
                 </div>
-                </tr>
-                @endforeach
+                
+               
                 <div class="card-footer">
                        
                 </div>

@@ -6,17 +6,39 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 Citas del paciente
+                 Citas del paciente: <strong>{{$nombrePaciente}}</strong>
                 </div>
                 @foreach($citas as $cita)
                 <tr>
                 <div class="panel-body">
-                  <p><strong>id</strong> {{ $cita->id }}</p>
-                  <p><strong>Descripcion</strong> {{ $cita->descripcion }}</p>
-                  <p><strong>Fecha</strong> {{ $cita->fecha }}</p>
-                  <p><strong>Hora</strong> {{ $cita->hora}}</p>
+                <div class="panel-body">
+                   <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                
+                                <th>No.</th>
+                                <th>Descripción</th>
+                                <th>Fecha [Año-Mes-Día]</th>
+                                <th>Hora</th>
+                                
+
+                             </tr>
+                        </thead>
+                   <tbody>
+                    @foreach($citas as $cita)
+                        <tr>
+                            <td>{{ $cita->id }}</td>
+                            <td> {{ $cita->descripcion }}</td>
+                            <td> {{ $cita->fecha }}</td>
+                            <td> {{ $cita->hora}}</td>
+                        </tr>
+                     @endforeach
+                    
+                   </tbody>      
+                  </table>
+                  <p>Cantidad de citas realizadas : <strong>{{$cont}}</strong></p>
                 </div>
-                </tr>
+                
                 @endforeach
                 <div class="card-footer">
                        

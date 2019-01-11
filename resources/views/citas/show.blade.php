@@ -10,10 +10,10 @@
                 </div>
 
                 <div class="panel-body">
-                  <p><strong>Descripcion</strong> {{ $cita->descripcion }}</p>
-                  <p><strong>Fecha de Cita</strong> {{ $cita->fecha }}</p>
-                  <p><strong>Hora</strong> {{ $cita->hora }}</p>
-                  <p><strong>Paciente</strong> {{ $cita->expediente->name }}</p>
+                  <p><strong>Descripción: </strong> {{ $cita->descripcion }}</p>
+                  <p><strong>Fecha de Cita: </strong> {{ $cita->fecha }}</p>
+                  <p><strong>Hora: </strong> {{ $cita->hora }}</p>
+                  <p><strong>Paciente: </strong> {{ $cita->expediente->name }}</p>
                   
                 </div>
             </div>

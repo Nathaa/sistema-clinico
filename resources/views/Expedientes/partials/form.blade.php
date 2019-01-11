@@ -13,6 +13,18 @@
         {{ Form::text('edad',null,['class' => 'form-control']) }}
 </div>
 
+
+<div class="form-group">
+                {!! Form::label('sexo', 'Sexo') !!}
+                <div class="form-group">
+                    <select name="sexo" id= "sexo" class="form-control" required>
+                        <option value="">--Sexo--</option>
+                        @foreach ($arraySexo as $arreglo)
+                        <option value="{{ $arreglo }}"> {{ $arreglo}}</option>  
+                        @endforeach
+                </select>    
+</div>
+
 <div class="form-group">
         {{ Form::label('dirreccion', 'Dirección')}}
         {{ Form::text('dirreccion',null,['class' => 'form-control']) }}
@@ -23,10 +35,6 @@
         {{ Form::text('telefono',null,['class' => 'form-control']) }}
 </div>
 
-<div class="form-group">
-        {{ Form::label('sexo', 'Sexo')}}
-        {{ Form::text('sexo',null,['class' => 'form-control']) }}
-</div>
 
 <div class="form-group">
         {{ Form::label('ocupacion', 'Ocupación')}}

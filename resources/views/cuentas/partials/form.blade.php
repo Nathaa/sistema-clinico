@@ -36,7 +36,7 @@
                         <option value="{{ $expediente->id }}"> {{ $expediente->name}}</option>  
                         @endforeach
                     </select>    
-                </div>
+</div>
                
                 
 </div>

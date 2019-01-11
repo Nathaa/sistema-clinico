@@ -15,7 +15,8 @@
                         <thead>
                             <tr>
                                 
-                                <th>Descripción</th>
+                                <th>Descripción del servicio</th>
+                                <th>Paciente</th>
                                 <th>Monto</th>
                              </tr>
                         </thead>
@@ -24,6 +25,7 @@
                         <tr>
                             
                             <td>{{ $cuenta->descripcion }}</td>
+                            <td> {{ $cuenta->expediente->name }}</td>
                             <td>$ {{ $cuenta->monto }}</td>
                         </tr>
                      @endforeach

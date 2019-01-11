@@ -44,7 +44,7 @@ class expedienteController extends Controller
     {
         $expediente = Expedientes::create($request->all());
 
-        return redirect()->route('expedientes.edit', $expediente->id)
+        return redirect()->route('expedientes.index', $expediente->id)
         ->with('info', 'expediente guardada con exito');
     }
 
@@ -72,10 +72,16 @@ class expedienteController extends Controller
      */
     public function showCitas(Expedientes $expediente)
     {
+        $cont = 0;
         $idExpediente = $expediente->id;
+        $nombrePaciente = $expediente->name;
         $citas = Citas::where('expediente_id', $idExpediente)->get();
 
-        return view('expedientes.showCitas', compact('citas'));
+        foreach ($citas as $cita) {
+            $cont = $cont + 1;
+        }
+
+        return view('expedientes.showCitas', compact('citas', 'cont', 'nombrePaciente'));
     }
 
     /**
@@ -87,10 +93,18 @@ class expedienteController extends Controller
      */
     public function showCuentas(Expedientes $expediente)
     {
+        $montoTotal = 0;
+        $cantidad = 0;
         $idExpediente = $expediente->id;
+        $nombrePaciente = $expediente->name;
         $cuentas = Cuentas::where('expediente_id', $idExpediente)->get();
 
-        return view('expedientes.showCuentas', compact('cuentas'));
+        foreach ($cuentas as $cuenta) {
+            $montoTotal = $montoTotal + $cuenta->monto;
+            $cantidad = $cantidad + 1;
+        }
+
+        return view('expedientes.showCuentas', compact('cuentas', 'montoTotal', 'cantidad', 'nombrePaciente'));
     }
 
     /**
@@ -102,7 +116,9 @@ class expedienteController extends Controller
      */
     public function edit(Expedientes $expediente)
     {
-        return view('expedientes.edit', compact('expediente'));
+        $arraySexo = array('Masculino', 'Femenino');
+
+        return view('expedientes.edit', compact('expediente', 'arraySexo'));
     }
 
     /**
