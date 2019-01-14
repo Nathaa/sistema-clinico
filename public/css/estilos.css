@@ -10,13 +10,7 @@ body{
     padding-right: 20px;
     }
 
-.sidebar {
-	position: absolute;
-	width: 200px;
-	height: 100%;	
-	background: #000000;
-	color: #fff;
-}
+
 .sidebar ul {
 	list-style: none;
 	padding: 0;
