@@ -142,7 +142,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('citas/{cita}/edit', 'CitaController@edit')->name('citas.edit')
     ->middleware('permission:citas.edit');
 
-    //Consultas
+    //Consultas de pagos por fechas
 
     Route::get('consultaPagos', 'ConsultaPagoController@index')->name('consultaPagos.index')
     ->middleware('permission:consultaPagos.index');
@@ -158,4 +158,18 @@ Route::middleware(['auth'])->group(function () {
 
     Route::delete('consultaPagos/{consultaspagos}', 'ConsultaPagoController@destroy')->name('consultaPagos.destroy')
     ->middleware('permission:consultaPagos.destroy');
+
+    //Consultas de pagos por pacientes
+
+    Route::get('consultaPagoPacientes', 'ConsultaPagosPacienteController@index')->name('consultaPagoPacientes.index')
+    ->middleware('permission:consultaPagoPacientes.index');
+
+    Route::post('consultaPagoPacientes/store', 'ConsultaPagosPacienteController@store')->name('consultaPagoPacientes.store')
+    ->middleware('permission:consultaPagos.create');
+
+    Route::get('consultaPagoPacientes/{consultaspagospaciente}', 'ConsultaPagosPacienteController@show')->name('consultaPagoPacientes.show')
+    ->middleware('permission:consultaPagoPacientes.show');
+
+    Route::delete('consultaPagoPacientes/{consultaspagospaciente}', 'ConsultaPagosPacienteController@destroy')->name('consultaPagoPacientes.destroy')
+    ->middleware('permission:consultaPagoPacientes.destroy');
 });

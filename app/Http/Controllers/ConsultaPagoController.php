@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ConsultasPagos;
 use App\Cuentas;
+use App\Expedientes;
 use Illuminate\Http\Request;
 
 class ConsultaPagoController extends Controller
@@ -27,7 +28,9 @@ class ConsultaPagoController extends Controller
      */
     public function create()
     {
-        return view('consultaPagos.create');
+        $expedientes = Expedientes::orderBy('name', 'asc')->get();
+
+        return view('consultaPagos.create', compact('expedientes'));
     }
 
     /**
@@ -41,7 +44,7 @@ class ConsultaPagoController extends Controller
     {
         $consultaspagos = ConsultasPagos::create($request->all());
 
-        return redirect()->route('consultaPagos.index', $consultaspagos->id)
+        return redirect()->route('consultaPagos.show', $consultaspagos->id)
         ->with('info', 'Consulta realizada con éxito');
     }
 

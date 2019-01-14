@@ -29,7 +29,7 @@ class cuentaController extends Controller
     public function create()
     {
         $citas = Citas::get();
-        $expedientes = Expedientes::get();
+        $expedientes = Expedientes::orderBy('name', 'asc')->get();
 
         return view('cuentas.create', compact('citas', 'expedientes'));
     }
@@ -45,7 +45,7 @@ class cuentaController extends Controller
     {
         $cuenta = Cuentas::create($request->all());
 
-        return redirect()->route('cuentas.edit', $cuenta->id)
+        return redirect()->route('cuentas.index', $cuenta->id)
         ->with('info', 'cuenta guardada con exito');
     }
 

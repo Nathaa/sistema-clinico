@@ -20,7 +20,7 @@
                         <thead>
                             <tr>
                                 <th width="10px">ID</th>
-                                <th>Cuenta</th>
+                                <th>Tratamiento aplicado</th>
                                 <th>Monto</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>

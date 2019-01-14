@@ -6,8 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 Consultas de pagos
-                   
+                 Consultas de pagos por paciente
                  @can('consultaPagos.create')
                  <a href="{{ route('consultaPagos.create') }}" 
                  class="btn btn-sm btn-primary pull-right">
@@ -21,29 +20,30 @@
                         <thead>
                             <tr>
                                 
-                                <th>Desde</th>
-                                <th>Hasta</th>
+                                <th>No.</th>
+                                <th>Paciente</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
                     <tbody>
-                        @foreach($consultaspagos as $consultaPago)
+                        @foreach($consultaspagospacientes as $consultaspagospaciente)
                         <tr>
                             
-                            <td>{{ $consultaPago->fechaInicio }}</td>
-                            <td>{{ $consultaPago->fechaFinal }}</td>
-                        
+                            <td>{{ $consultaspagospaciente->id }}</td>
+                             <td>{{ $consultaspagospaciente->expediente_id}}</td>
+
                         <td width="10px">
-                               @can('consultaPagos.show')
-                                 <a href="{{ route('consultaPagos.show', $consultaPago->id) }}"
+                               @can('consultaPagoPacientes.show')
+                                 <a href="{{ route('consultaPagoPacientes.show', $consultaspagospaciente->id) }}"
                                  class="btn btn-sm btn-default">
                                     Ver resultados
                                  </a>
                                 @endcan
                         </td>
+                            
                         <td width="10px">
-                                @can('consultaPagos.destroy')
-                                {!! Form::open(['route' => ['consultaPagos.destroy', $consultaPago->id],
+                                @can('consultaPagoPacientes.destroy')
+                                {!! Form::open(['route' => ['consultaPagoPacientes.destroy', $consultaspagospaciente->id],
                                 'method' =>'DELETE']) !!}
                                 <button class="btn btn-sm btn-danger">
                                 Eliminar
@@ -55,14 +55,7 @@
                         @endforeach
                     </tbody>
                     </table>
-                    @can('consultaPagos.create')
-                    <a href="{{ route('consultaPagoPacientes.index') }}" 
-                    class="btn btn-sm btn-primary pull-left">
-                    Historial de consultas de pagos por paciente 
-                    </a>
-                    @endcan
-                    {{ $consultaspagos->render() }}
-                   
+                    {{ $consultaspagospacientes->render() }}
                 </div>
             </div>
         </div>
