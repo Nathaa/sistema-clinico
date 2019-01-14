@@ -20,7 +20,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('css/lib/admin_lte/adminlte.min.css')}}">
  
-  <link rel="stylesheet" href="{{asset('css/lib/admin_lte/skins/skin-green.min.css')}}">
+  <link rel="stylesheet" href="{{asset('css/lib/admin_lte/skins/skin-red.min.css')}}">
   <!--Estilo Personalizado CSS -->  
   <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
@@ -55,7 +55,7 @@
 
 
 
-<body class="hold-transition skin-green sidebar-mini">
+<body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -64,9 +64,9 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b></b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Diseñando Sonrisas</b></span>
     </a>
 
     <!-- Header Navbar -->
@@ -180,7 +180,7 @@
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="{{asset('img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+              
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs">Alexander Pierce</span>
             </a>
@@ -196,17 +196,7 @@
               </li>
               <!-- Menu Body -->
               <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
+               
                 <!-- /.row -->
               </li>
               <!-- Menu Footer-->
@@ -215,14 +205,22 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="{{ route('logout') }}"  class="btn btn-default btn-success" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Salir</a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      {{ csrf_field() }}
+                  </form>
                 </div>
               </li>
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+              <div class="pull-right">
+                  <a href="{{ route('logout') }}"   onclick="event.preventDefault();document.getElementById('logout-form').submit();"></a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      {{ csrf_field() }}
+                  </form>
+                </div>
           </li>
         </ul>
       </div>
@@ -261,19 +259,32 @@
       <!-- Sidebar Menu -->
       
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">HEADER</li>
+        <li class="header">Opciones</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="{{ route('citas.index') }}"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+       
+        <li><a href="{{ route('citas.index') }}"><i class="fa fa-link"></i> <span>Citas</span></a></li>
+        <li><a href="{{ route('expedientes.index') }}"><i class="fa fa-link"></i> <span>Expedientes</span></a></li> 
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
+            <a href="#"><i class="fa fa-link"></i> <span>Cobros a Pacientes</span>
+              <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="{{route('cuentas.index')}}">Cuentas</a></li>
+              <li><a href="{{route('consultaPagos.index')}}">Consulta de Pagos</a></li>
+            </ul>
+          </li>
+        
+        <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>Usuario</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
+            <li><a href="{{route('users.index')}}">Usuarios Registrados</a></li>
+            <li><a href="{{route('roles.index')}}">Roles de Usuarios</a></li>
           </ul>
         </li>
       </ul>
@@ -287,23 +298,19 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Page Header
-        <small>Optional description</small>
+      
+       
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol>
+      
     </section>
 
     <!-- Main content -->
     <section class="content container-fluid">
 
-      <!--------------------------
-        | Your Page Content Here |
-        -------------------------->
+      
         @yield('content')
 
+     
     </section>
     <!-- /.content -->
   </div>
