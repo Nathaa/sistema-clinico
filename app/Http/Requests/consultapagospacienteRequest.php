@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class consultaPagoRequest extends FormRequest
+class consultapagospacienteRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,7 @@ class consultaPagoRequest extends FormRequest
     public function rules()
     {
         return [
-            'fechaInicio' => 'required',
-            'fechaFinal' => 'required',
+            'expediente_id' => 'numeric|min:1|max:1000|required',
         ];
     }
 }

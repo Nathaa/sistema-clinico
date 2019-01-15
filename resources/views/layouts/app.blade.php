@@ -48,11 +48,6 @@
                         </li>
                         @endcan
                         
-                        @can('users.index')
-                        <li class="nav-item">
-                                <a class="nav-link" href="{{route('users.index')}}">Usuario</a>
-                        </li>
-                        @endcan
                         @can('cuentas.index')
                         <li class="nav-item">
                                 <a class="nav-link" href="{{route('cuentas.index')}}">Cuentas</a>
@@ -61,6 +56,11 @@
                          @can('consultaPagos.index')
                         <li class="nav-item">
                                     <a class="nav-link" href="{{route('consultaPagos.index')}}">Consultar Pagos</a>
+                        </li>
+                        @endcan
+                        @can('users.index')
+                        <li class="nav-item">
+                                <a class="nav-link" href="{{route('users.index')}}">Usuario</a>
                         </li>
                         @endcan
                         @can('roles.index')

@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateConsultaspagosTable extends Migration
+class CreateConsultaPagoPacientesTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up()
     {
-        Schema::create('consultaspagos', function (Blueprint $table) {
+        Schema::create('consulta_pagos_pacientes', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('fechaInicio');
-            $table->date('fechaFinal');
+            $table->integer('expediente_id');
+            $table->foreign('expediente_id')->references('id')->on('expedientes');
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ class CreateConsultaspagosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('consultaspagos');
+        Schema::dropIfExists('consulta_pago_pacientes');
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Citas;
 use App\Expedientes;
 use Illuminate\Http\Request;
+use App\Http\Requests\citasRequest;
 
 class CitaController extends Controller
 {
@@ -15,7 +16,7 @@ class CitaController extends Controller
      */
     public function index()
     {
-        $citas = Citas::paginate();
+        $citas = Citas::orderBy('fecha', 'desc')->paginate();
 
         return view('citas.index', compact('citas'));
     }
@@ -27,7 +28,7 @@ class CitaController extends Controller
      */
     public function create()
     {
-        $expedientes = Expedientes::get();
+        $expedientes = Expedientes::orderBy('name', 'asc')->get();
 
         return view('citas.create', compact('expedientes'));
     }
@@ -39,12 +40,12 @@ class CitaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(citasRequest $request)
     {
         $cita = Citas::create($request->all());
 
-        return redirect()->route('citas.edit', $cita->id)
-        ->with('info', 'Cita guardada con exito');
+        return redirect()->route('citas.index', $cita->id)
+        ->with('info', 'Cita guardada con éxito');
     }
 
     /**
