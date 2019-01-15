@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Citas;
 use App\Expedientes;
 use Illuminate\Http\Request;
+use App\Http\Requests\citasRequest;
 
 class CitaController extends Controller
 {
@@ -39,7 +40,7 @@ class CitaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(citasRequest $request)
     {
         $cita = Citas::create($request->all());
 

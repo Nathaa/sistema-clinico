@@ -6,6 +6,7 @@ use App\Citas;
 use App\Cuentas;
 use App\Expedientes;
 use Illuminate\Http\Request;
+use App\Http\Requests\expedientesRequest;
 
 class expedienteController extends Controller
 {
@@ -40,7 +41,7 @@ class expedienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(expedientesRequest $request)
     {
         $expediente = Expedientes::create($request->all());
 

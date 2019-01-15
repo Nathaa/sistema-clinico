@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ConsultaPagosPaciente;
 use App\Cuentas;
 use Illuminate\Http\Request;
+use App\Http\Requests\consultapagospacienteRequest;
 
 class ConsultaPagosPacienteController extends Controller
 {
@@ -27,7 +28,7 @@ class ConsultaPagosPacienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(consultapagospacienteRequest $request)
     {
         $consultaspagospaciente = ConsultaPagosPaciente::create($request->all());
 

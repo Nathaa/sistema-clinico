@@ -6,6 +6,7 @@ use App\ConsultasPagos;
 use App\Cuentas;
 use App\Expedientes;
 use Illuminate\Http\Request;
+use App\Http\Requests\consultaPagoRequest;
 
 class ConsultaPagoController extends Controller
 {
@@ -40,7 +41,7 @@ class ConsultaPagoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(consultaPagoRequest $request)
     {
         $consultaspagos = ConsultasPagos::create($request->all());
 
