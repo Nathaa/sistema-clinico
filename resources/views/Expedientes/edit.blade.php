@@ -16,6 +16,7 @@
                         'method' =>'PUT'])  !!}
                         <enctype="multipart/form-data">
                        
+                        HOLA MUNDO.............
                         
                         <img width="150" src={{ Storage::url($expediente->avatar) }}>
                         @include('expedientes.partials.form')
