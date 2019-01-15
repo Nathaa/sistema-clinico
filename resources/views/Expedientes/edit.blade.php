@@ -10,12 +10,16 @@
                 </div>
 
                 <div class="panel-body">
-                 {!! Form::model($expediente, ['route' => ['expedientes.update', $expediente->id],
-                 'method' =>'PUT'])  !!}
-                  
-                 @include('expedientes.partials.form')
-
-                 {!! Form::close() !!}
+                
+                        <form method="POST"
+                        {!! Form::model($expediente, ['route' => ['expedientes.update', $expediente->id],
+                        'method' =>'PUT'])  !!}
+                        <enctype="multipart/form-data">
+                       
+                        
+                        <img width="150" src={{ Storage::url($expediente->avatar) }}>
+                        @include('expedientes.partials.form')
+                       {!! Form::close() !!}
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ use App\Citas;
 use App\Cuentas;
 use App\Expedientes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class expedienteController extends Controller
 {
@@ -44,7 +45,10 @@ class expedienteController extends Controller
     {
         $expediente = Expedientes::create($request->all());
 
-        return redirect()->route('expedientes.index', $expediente->id)
+        $expediente->avatar = $request->file('avatar')->store('public');
+        $expediente->save();
+
+        return redirect()->route('expedientes.index', compact('expediente'))
         ->with('info', 'expediente guardada con exito');
     }
 
@@ -82,6 +86,20 @@ class expedienteController extends Controller
         }
 
         return view('expedientes.showCitas', compact('citas', 'cont', 'nombrePaciente'));
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param int $id
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function postNewImage(Request $request)
+    {
+        $this->validate($request, [
+            'photo' => 'required|image',
+        ]);
     }
 
     /**
@@ -131,9 +149,13 @@ class expedienteController extends Controller
      */
     public function update(Request $request, Expedientes $expediente)
     {
-        $expediente->update($request->all());
+        if ($request->hasfile('avatar')) {
+            $expediente->avatar = $request->file('avatar')->store('public');
+        }
+        $expediente->update($request->only('name','nacimiento','edad',
+        'dirreccion', 'telefono', 'sexo', 'ocupacion', 'tratamiento', 'diagnostico', 'alergias'));
 
-        return redirect()->route('expedientes.edit', $expediente->id)
+        return redirect()->route('expedientes.edit', compact('expediente'))
         ->with('info', 'expediente guardado con exito');
     }
 

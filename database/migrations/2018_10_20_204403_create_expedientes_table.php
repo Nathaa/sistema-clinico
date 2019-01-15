@@ -23,6 +23,7 @@ class CreateExpedientesTable extends Migration
             $table->string('tratamiento');
             $table->string('diagnostico');
             $table->string('alergias');
+            $table->string('photo');
             $table->timestamps();
         });
     }

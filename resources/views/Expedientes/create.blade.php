@@ -10,8 +10,9 @@
                 </div>
 
                 <div class="panel-body">
-                 {!! Form::open(['route' => 'expedientes.store']) !!}
-                  
+                
+                 {!! Form::open(['route' => 'expedientes.store','files'=> true]) !!}
+                 <enctype="multipart/form-data">
                  @include('expedientes.partials.form')
 
                  {!! Form::close() !!}
