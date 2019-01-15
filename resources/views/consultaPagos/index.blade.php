@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 Consultas de pagos
+                 Historial de consulta de pagos por fecha
                    
                  @can('consultaPagos.create')
                  <a href="{{ route('consultaPagos.create') }}" 
@@ -55,12 +55,7 @@
                         @endforeach
                     </tbody>
                     </table>
-                    @can('consultaPagos.create')
-                    <a href="{{ route('consultaPagoPacientes.index') }}" 
-                    class="btn btn-sm btn-primary pull-left">
-                    Historial de consultas de pagos por paciente 
-                    </a>
-                    @endcan
+                   
                     {{ $consultaspagos->render() }}
                    
                 </div>

@@ -42,9 +42,7 @@
                 </div>
                 
                
-        <div class="card-footer">
-        <a href="{{ route('consultaPagoPacientes.index') }}" class="btn btn-sm btn-danger" >Ver historial de pagos por paciente</a>
-        </div>       
+               
             </div>
            
         </div>

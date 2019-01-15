@@ -31,7 +31,7 @@ class ConsultaPagosPacienteController extends Controller
     {
         $consultaspagospaciente = ConsultaPagosPaciente::create($request->all());
 
-        return redirect()->route('consultaPagoPacientes.index', $consultaspagospaciente->id)
+        return redirect()->route('consultaPagoPacientes.show', $consultaspagospaciente->id)
         ->with('info', 'Consulta realizada con éxito');
     }
 
