@@ -1,7 +1,7 @@
 <div class="form-group">
         {{ Form::label('monto', 'Cantidad del monto a pagar')}}
-        {{ Form::number('monto',null,['class' => 'form-control']) }}
-    </div>
+        {{ Form::number('monto',null,['class' => 'form-control', 'step' => '0.1']) }}
+</div>
     
 <div class="form-group">
             {{ Form::label('descripcion', 'Descripción del servicio cancelado ')}}

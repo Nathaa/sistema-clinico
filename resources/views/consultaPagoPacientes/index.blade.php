@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admi')
 
 @section('content')
 <div class="container">
@@ -20,8 +20,8 @@
                         <thead>
                             <tr>
                                 
-                                <th>No.</th>
-                                <th>Paciente</th>
+                                <th>Paciente ID</th>
+                                <th>Nombre del paciente</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
@@ -29,8 +29,10 @@
                         @foreach($consultaspagospacientes as $consultaspagospaciente)
                         <tr>
                             
-                            <td>{{ $consultaspagospaciente->id }}</td>
+                            
                              <td>{{ $consultaspagospaciente->expediente_id}}</td>
+                             <td>{{$nombres[$consultaspagospaciente->expediente_id-1]->name}}</td>
+                             
 
                         <td width="10px">
                                @can('consultaPagoPacientes.show')
@@ -55,6 +57,7 @@
                         @endforeach
                     </tbody>
                     </table>
+                    
                     {{ $consultaspagospacientes->render() }}
                 </div>
             </div>

@@ -55,6 +55,12 @@
                         @endforeach
                     </tbody>
                     </table>
+                     @can('consultaPagoPacientes.index')
+                    <a href="{{ route('consultaPagoPacientes.index') }}" 
+                    class="btn btn-sm btn-primary pull-left">
+                    Ver historial de consultas de pagos por paciente
+                    </a>
+                    @endcan
                    
                     {{ $consultaspagos->render() }}
                    

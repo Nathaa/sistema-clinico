@@ -6,6 +6,7 @@ use App\Citas;
 use App\Cuentas;
 use App\Expedientes;
 use Illuminate\Http\Request;
+use App\Http\Requests\cuentasRequest;
 
 class cuentaController extends Controller
 {
@@ -41,7 +42,7 @@ class cuentaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CuentasRequest $request)
     {
         $cuenta = Cuentas::create($request->all());
 

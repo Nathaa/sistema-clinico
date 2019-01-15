@@ -7,7 +7,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 Cuentas del paciente
+                 Cuentas del paciente: <strong>{{ $expedienteNombre }}</strong>
                 </div>
                 
                 
@@ -36,11 +36,11 @@
                   
                             
                   </table>
-                   <p>Pagos efectuados :<strong>{{ $cantidad }}</strong></p>
-                    <p>Monto Total :<strong>${{ $montoTotal }}</strong></p>
+                   <p>Pagos efectuados : <strong>{{ $cantidad }}</strong></p>
+                    <p>Monto Total : <strong>${{ $montoTotal }}</strong></p>
                 
                 </div>
-                
+                <a href="{{ route('consultaPagoPacientes.index') }}" class="btn btn-sm btn-danger" >Ver historial de consultas de pagos por paciente</a>           
                
                
             </div>

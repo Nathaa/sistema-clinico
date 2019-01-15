@@ -41,7 +41,7 @@ class expedienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(expedientesRequest $request)
+    public function store(Request $request)
     {
         $expediente = Expedientes::create($request->all());
 

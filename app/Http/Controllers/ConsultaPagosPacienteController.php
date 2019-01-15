@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ConsultaPagosPaciente;
 use App\Cuentas;
+use App\Expedientes;
 use Illuminate\Http\Request;
 use App\Http\Requests\consultapagospacienteRequest;
 
@@ -17,8 +18,9 @@ class ConsultaPagosPacienteController extends Controller
     public function index()
     {
         $consultaspagospacientes = ConsultaPagosPaciente::paginate();
+        $nombres = Expedientes::get();
 
-        return view('consultaPagoPacientes.index', compact('consultaspagospacientes'));
+        return view('consultaPagoPacientes.index', compact('consultaspagospacientes', 'nombres'));
     }
 
     /**
@@ -42,13 +44,15 @@ class ConsultaPagosPacienteController extends Controller
         $cantidad = 0;
         $idExpediente = $consultaspagospaciente->expediente_id;
         $cuentas = Cuentas::where('expediente_id', $idExpediente)->get();
+        $expediente = Expedientes::select('name')->where('id', $idExpediente)->get();
+        $expedienteNombre = $expediente[0]->name;
 
         foreach ($cuentas as $cuenta) {
             $montoTotal = $montoTotal + $cuenta->monto;
             $cantidad = $cantidad + 1;
         }
 
-        return view('consultaPagoPacientes.show', compact('cuentas', 'montoTotal', 'cantidad'));
+        return view('consultaPagoPacientes.show', compact('cuentas', 'montoTotal', 'cantidad', 'expedienteNombre'));
     }
 
     /**
