@@ -10,7 +10,7 @@
                 </div>
 
                 <div class="panel-body">
-                        <img width="150" src={{ Storage::url($expediente->avatar) }}>
+                        <img width="150px" height="175px" src={{ Storage::url($expediente->avatar) }}> <br><br>
                   <p><strong>Nombre: </strong> {{ $expediente->name }}</p>
                   <p><strong>Fecha de Nacimiento: </strong> {{ $expediente->nacimiento }}</p>
                   <p><strong>Edad: </strong> {{ $expediente->edad }}</p>
