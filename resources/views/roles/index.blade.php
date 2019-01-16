@@ -48,7 +48,7 @@
                                  <td width="10px">
                                         @can('roles.destroy')
                                           {!! Form::open(['route' => ['roles.destroy', $role->id],
-                                          'method' =>'DELETE']) !!}
+                                          'method' =>'DELETE','onsubmit' => 'return confirm("¿Desea eliminar el rol?")']) !!}
                                           <button class="btn btn-sm btn-danger">
                                               Eliminar
                                           </button>

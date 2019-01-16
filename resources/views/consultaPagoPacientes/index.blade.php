@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admi')
 
 @section('content')
 <div class="container">
@@ -20,7 +20,7 @@
                         <thead>
                             <tr>
                                 
-                                <th>No.</th>
+                                
                                 <th>Paciente</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
@@ -29,8 +29,8 @@
                         @foreach($consultaspagospacientes as $consultaspagospaciente)
                         <tr>
                             
-                            <td>{{ $consultaspagospaciente->id }}</td>
-                             <td>{{ $consultaspagospaciente->expediente_id}}</td>
+                            
+                             <td>{{ $expedientes[$consultaspagospaciente->expediente_id-1]->name}}</td>
 
                         <td width="10px">
                                @can('consultaPagoPacientes.show')
@@ -44,7 +44,7 @@
                         <td width="10px">
                                 @can('consultaPagoPacientes.destroy')
                                 {!! Form::open(['route' => ['consultaPagoPacientes.destroy', $consultaspagospaciente->id],
-                                'method' =>'DELETE']) !!}
+                                'method' =>'DELETE','onsubmit' => 'return confirm("¿Desea eliminar la consulta?")']) !!}
                                 <button class="btn btn-sm btn-danger">
                                 Eliminar
                                 </button>

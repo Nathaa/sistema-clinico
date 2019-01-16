@@ -44,7 +44,7 @@
                                  <td width="10px">
                                         @can('users.destroy')
                                           {!! Form::open(['route' => ['users.destroy', $user->id],
-                                          'method' =>'DELETE']) !!}
+                                          'method' =>'DELETE','onsubmit' => 'return confirm("¿Desea eliminar el usuario")']) !!}
                                           <button class="btn btn-sm btn-danger">
                                               Eliminar
                                           </button>

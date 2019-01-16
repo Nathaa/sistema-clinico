@@ -48,7 +48,7 @@
                                  <td width="10px">
                                         @can('citas.destroy')
                                           {!! Form::open(['route' => ['citas.destroy', $cita->id],
-                                          'method' =>'DELETE']) !!}
+                                          'method' =>'DELETE','onsubmit' => 'return confirm("¿Desea eliminar la cita?")']) !!}
                                           <button class="btn btn-sm btn-danger">
                                               Eliminar
                                           </button>

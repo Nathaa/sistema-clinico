@@ -3,10 +3,14 @@
 @section('content')
 <div class="container">
     <div class="row">
+    
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
+                
                  Historial de consulta de pagos por fecha
+
+                 
                    
                  @can('consultaPagos.create')
                  <a href="{{ route('consultaPagos.create') }}" 
@@ -14,6 +18,8 @@
                  Nueva consulta
                 </a>
                  @endcan
+
+                
 
                 </div>
 
@@ -45,7 +51,7 @@
                         <td width="10px">
                                 @can('consultaPagos.destroy')
                                 {!! Form::open(['route' => ['consultaPagos.destroy', $consultaPago->id],
-                                'method' =>'DELETE']) !!}
+                                'method' =>'DELETE', 'onsubmit' => 'return confirm("¿Desea eliminar la consulta?")']) !!}
                                 <button class="btn btn-sm btn-danger">
                                 Eliminar
                                 </button>
@@ -56,6 +62,8 @@
                         @endforeach
                     </tbody>
                     </table>
+                     <a href="{{ route('consultaPagoPacientes.index') }}" 
+                    class="btn btn-sm btn-primary pull-left" >Ver historial de consultas por paciente</a>
                    
                     {{ $consultaspagos->render() }}
                    

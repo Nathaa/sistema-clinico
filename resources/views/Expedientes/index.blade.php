@@ -48,7 +48,7 @@
                                  <td width="10px">
                                         @can('expedientes.destroy')
                                           {!! Form::open(['route' => ['expedientes.destroy', $expediente->id],
-                                          'method' =>'DELETE']) !!}
+                                          'method' =>'DELETE','onsubmit' => 'return confirm("¿Desea eliminar el expediente?")']) !!}
                                           <button class="btn btn-sm btn-danger">
                                               Eliminar
                                           </button>

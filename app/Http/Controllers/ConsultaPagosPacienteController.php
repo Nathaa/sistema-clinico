@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ConsultaPagosPaciente;
 use App\Cuentas;
+use App\Expedientes;
 use Illuminate\Http\Request;
 use App\Http\Requests\consultapagospacienteRequest;
 
@@ -17,8 +18,9 @@ class ConsultaPagosPacienteController extends Controller
     public function index()
     {
         $consultaspagospacientes = ConsultaPagosPaciente::paginate();
+        $expedientes = Expedientes::get();
 
-        return view('consultaPagoPacientes.index', compact('consultaspagospacientes'));
+        return view('consultaPagoPacientes.index', compact('consultaspagospacientes', 'expedientes'));
     }
 
     /**

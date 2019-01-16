@@ -1,6 +1,6 @@
 <div class="form-group">
         {{ Form::label('monto', 'Cantidad del monto a pagar')}}
-        {{ Form::number('monto',null,['class' => 'form-control']) }}
+        {{ Form::number('monto',null,['class' => 'form-control','step'=>'any']) }}
     </div>
     
 <div class="form-group">
