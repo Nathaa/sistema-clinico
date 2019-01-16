@@ -27,13 +27,14 @@ class expedientesRequest extends FormRequest
             'name' => 'max:120|required',
             'nacimiento' => 'required',
             'edad' => 'numeric|min:1|max:100|required',
-            'direccion' => 'max:120|required',
+            'dirreccion' => 'max:120|required',
             'telefono' => 'max:120|required',
             'sexo' => 'max:120|required',
             'ocupacion' => 'max:120|required',
             'tratamiento' => 'max:120|required',
             'diagnostico' => 'max:120|required',
             'alergias' => 'max:120|required',
+            'avatar' => 'required|image',
         ];
     }
 }

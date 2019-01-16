@@ -7,6 +7,7 @@ use App\Cuentas;
 use App\Expedientes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\expedientesRequest;
 
 class expedienteController extends Controller
 {
@@ -41,11 +42,13 @@ class expedienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(expedientesRequest $request)
     {
         $expediente = Expedientes::create($request->all());
 
-        $expediente->avatar = $request->file('avatar')->store('public');
+        if ($request->hasfile('avatar')) {
+            $expediente->avatar = $request->file('avatar')->store('public');
+        }
         $expediente->save();
 
         return redirect()->route('expedientes.index', compact('expediente'))
