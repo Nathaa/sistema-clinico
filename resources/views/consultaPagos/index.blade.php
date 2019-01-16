@@ -14,6 +14,7 @@
                  Nueva consulta
                 </a>
                  @endcan
+
                 </div>
 
                 <div class="panel-body">
