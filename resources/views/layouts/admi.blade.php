@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="{{asset('css/lib/admin_lte/skins/skin-red.min.css')}}">
   <!--Estilo Personalizado CSS -->  
   <link rel="stylesheet" href="{{asset('css/style.css')}}">
-
+ 
   <meta name="google-site-verification" content="oT3EX28XrZ8ZFbUBEeSCYth8JwrLf7Ut5t9j9rzlGJ8" />
   <meta name="author" content="Arely Bonilla, Nathaly Amaya">
   <meta name="description" content="Página principal donde se introduce Sistema Clinico">
@@ -263,6 +263,7 @@
         <!-- Optionally, you can add icons to the links -->
        
         <li><a href="{{ route('citas.index') }}"><i class="fa fa-link"></i> <span>Citas</span></a></li>
+        <li><a href="{{ url('/home2') }}"><i class="fa fa-link"></i> <span>Calen</span></a></li>
         <li><a href="{{ route('expedientes.index') }}"><i class="fa fa-link"></i> <span>Expedientes</span></a></li> 
         <li class="treeview">
             <a href="#"><i class="fa fa-link"></i> <span>Cobros a Pacientes</span>
@@ -415,7 +416,10 @@
 <script src="{{asset('js/lib/adminlte.min.js')}}"></script>
 <!-- Bootbox -->
 <script src="{{asset('js/lib/bootbox/bootbox.min.js')}}"></script>
+
+
 <script src="{{asset('js/funciones.js')}}"></script>
+
 
 @yield('js')
 <script src="dist/js/adminlte.min.js"></script>

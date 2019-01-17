@@ -22,6 +22,9 @@ Auth::routes();
 //ruta protegida solo se se entra el inisiar sesion
 Route::get('/home', 'HomeController@index')->name('home');
 
+//ruta protegida solo se se entra el inisiar sesion
+Route::get('/home2', 'Home2Controller@index')->name('home2');
+
 //Routes
 
 //verifica si estas autentificado
