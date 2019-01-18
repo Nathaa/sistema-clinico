@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="{{asset('css/lib/admin_lte/skins/skin-red.min.css')}}">
   <!--Estilo Personalizado CSS -->  
   <link rel="stylesheet" href="{{asset('css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('fullcalendar/fullcalendar.css')}}">
  
   <meta name="google-site-verification" content="oT3EX28XrZ8ZFbUBEeSCYth8JwrLf7Ut5t9j9rzlGJ8" />
   <meta name="author" content="Arely Bonilla, Nathaly Amaya">
@@ -416,12 +417,17 @@
 <script src="{{asset('js/lib/adminlte.min.js')}}"></script>
 <!-- Bootbox -->
 <script src="{{asset('js/lib/bootbox/bootbox.min.js')}}"></script>
-
+<script src="{{ asset('fullcalendar/lib/moment.min.js') }}"></script>
+<script src="{{ asset('fullcalendar/lib/jquery.min.js') }}"></script> 
+<script src="{{ asset('fullcalendar/js/fullcalendar.js') }}"></script>
+<script src="{{ asset('fullcalendar/locale/es.js') }}"></script> 
+    @yield('script')
 
 <script src="{{asset('js/funciones.js')}}"></script>
-
-
 @yield('js')
+
+<!-- Scripts -->
+
 <script src="dist/js/adminlte.min.js"></script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
