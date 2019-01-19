@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{ config('app.name', 'Laravel') }}</title>
+  <title>Diseñando sonrisas</title>
   
   <!-- CSRF Token -->
 
@@ -37,7 +37,7 @@
  
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sistema Clinico">
-  <meta name="twitter:description" content="Página principal donde se introduce MyCurseApp.......">
+  <meta name="twitter:description" content="Página principal donde se introduce Sistema clínico.......">
 
 
 
@@ -325,7 +325,7 @@
       Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2019 <a href="#">DiseñandoSonrisas</a>.</strong>DerechosReservados
   </footer>
 
   <!-- Control Sidebar -->
