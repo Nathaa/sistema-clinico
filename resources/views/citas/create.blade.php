@@ -1,6 +1,6 @@
-@extends('layouts.admi')
+@extends('layouts.admin')
 
-@section('content')
+@section('contenedor')
 @if(count($errors)>0)
         <div class="alert alert-danger" role="alert">
             <ul>
@@ -15,12 +15,13 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 Cita
+                 Nueva cita
                 </div>
 
                 <div class="panel-body">
-                 {!! Form::open(['route' => 'citas.store']) !!}
-                  
+                
+                 {!! Form::open(['route' => 'citas.store','files'=> true]) !!}
+                 <enctype="multipart/form-data">
                  @include('citas.partials.form')
 
                  {!! Form::close() !!}

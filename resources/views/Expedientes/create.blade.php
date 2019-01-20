@@ -15,7 +15,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 Expediente
+                 Nuevo expediente
                 </div>
 
                 <div class="panel-body">

@@ -8,8 +8,6 @@ class Citas extends Model
 {
     public $table = 'citas';
     protected $fillable = [
-        'descripcion', 'fechai_nicio', 'fecha_final', 'color',
+        'descripcion', 'fecha', 'hora', 'expediente_id',
     ];
-
-    public $timestamps = false;
 }

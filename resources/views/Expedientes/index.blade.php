@@ -58,7 +58,7 @@
                                      <td width="10px">
                                         @can('expedientes.showCitas')
                                           <a href="{{ route('expedientes.showCitas', $expediente->id) }}"
-                                          class="btn btn-sm btn-default">
+                                          class="btn btn-sm btn-warning">
                                              Citas
                                           </a>
                                          @endcan
@@ -66,8 +66,8 @@
                                      <td width="10px">
                                         @can('expedientes.showCuentas')
                                           <a href="{{ route('expedientes.showCuentas', $expediente->id) }}"
-                                          class="btn btn-sm btn-default">
-                                             Cuentas
+                                          class="btn btn-sm btn-info">
+                                             Pagos
                                           </a>
                                          @endcan
                                      </td>

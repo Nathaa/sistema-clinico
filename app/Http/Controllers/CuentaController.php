@@ -30,8 +30,10 @@ class cuentaController extends Controller
     {
         $citas = Citas::get();
         $expedientes = Expedientes::orderBy('name', 'asc')->get();
+        $arrayTratamientos = array('Consulta', 'Limpieza dental', 'Extracción de piezas', 'Endodoncia',
+        'Ortodoncia', 'Prótesis', 'Implantes', 'Otro', );
 
-        return view('cuentas.create', compact('citas', 'expedientes'));
+        return view('cuentas.create', compact('citas', 'expedientes', 'arrayTratamientos'));
     }
 
     /**
@@ -72,8 +74,10 @@ class cuentaController extends Controller
     {
         $citas = Citas::get();
         $expedientes = Expedientes::get();
+        $arrayTratamientos = array('Consulta', 'Limpieza dental', 'Extracción de piezas', 'Endodoncia',
+        'Ortodoncia', 'Prótesis', 'Implantes', 'Otro', );
 
-        return view('cuentas.edit', compact('cuenta', 'citas', 'expedientes'));
+        return view('cuentas.edit', compact('cuenta', 'citas', 'expedientes', 'arrayTratamientos'));
     }
 
     /**

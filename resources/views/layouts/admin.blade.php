@@ -76,7 +76,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="dist/img/user2-160x160.jpg" class="img-circle" >
                       </div>
                       <h4>
                         Support Team
@@ -89,7 +89,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        
                       </div>
                       <h4>
                         AdminLTE Design Team
@@ -101,7 +101,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                        
                       </div>
                       <h4>
                         Developers
@@ -113,7 +113,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        
                       </div>
                       <h4>
                         Sales Department
@@ -125,7 +125,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                        
                       </div>
                       <h4>
                         Reviewers
@@ -219,7 +219,7 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              
               <span class="hidden-xs">{{ Auth::user()->name }}</span>
             </a>
             <ul class="dropdown-menu">
@@ -260,7 +260,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="dist/img/user2-160x160.jpg"  alt="User Image">
         </div>
         <div class="pull-left info">
           <p>{{ Auth::user()->name }}</p>
@@ -272,22 +272,23 @@
       <!-- Sidebar Menu -->
       
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">Opciones</li>
+        <li class="header">Menú</li>
         <!-- Optionally, you can add icons to the links -->
-       
-        <li><a href="{{ route('citas.index') }}"><i class="fa fa-link"></i> <span>Citas</span></a></li>
-        <li><a href="{{ url('/home2') }}"><i class="fa fa-link"></i> <span>Calen</span></a></li>
+
         <li><a href="{{route('expedientes.index')}}"><i class="fa fa-link"></i> <span>Expediente</span></a></li>
+        <li><a href="{{ route('citas.index') }}"><i class="fa fa-link"></i> <span>Citas</span></a></li>
+        
+        
        
         <li class="treeview">
-            <a href="#"><i class="fa fa-link"></i> <span>Cobros a Pacientes</span>
+            <a href="#"><i class="fa fa-link"></i> <span>Registro de pagos</span>
               <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="{{route('cuentas.index')}}">Cuentas</a></li>
-              <li><a href="{{route('consultaPagos.index')}}">Consulta de Pagos</a></li>
+              <li><a href="{{route('cuentas.index')}}">Pagos</a></li>
+              <li><a href="{{route('consultaPagos.index')}}">Consulta de pagos</a></li>
             </ul>
           </li>
         
@@ -316,10 +317,7 @@
         @yield("titulo")
         
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
+      
     </section>
 
     <!-- Main content -->
