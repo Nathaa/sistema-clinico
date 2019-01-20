@@ -50,7 +50,7 @@
                                  <td width="10px">
                                         @can('cuentas.destroy')
                                           {!! Form::open(['route' => ['cuentas.destroy', $cuenta->id],
-                                          'method' =>'DELETE','onsubmit' => 'return confirm("¿Desea eliminar la cuenta?")']) !!}
+                                          'method' =>'DELETE','onsubmit' => 'return confirm("¿Desea eliminar la pago?")']) !!}
                                           <button class="btn btn-sm btn-danger">
                                               Eliminar
                                           </button>

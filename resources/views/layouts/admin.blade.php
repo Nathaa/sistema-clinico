@@ -279,6 +279,8 @@
         <li><a href="{{ route('citas.index') }}"><i class="fa fa-link"></i> <span>Citas</span></a></li>
         
         
+        
+        
        
         <li class="treeview">
             <a href="#"><i class="fa fa-link"></i> <span>Registro de pagos</span>
