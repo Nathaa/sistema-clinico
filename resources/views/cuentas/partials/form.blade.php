@@ -14,12 +14,12 @@
 </div>
 
 <div class="form-group">
-                {!! Form::label('cita_id', 'Cita del paciente') !!}
+                {!! Form::label('tipoCita', 'Motivo de la cita') !!}
                 <div class="form-group">
-                    <select name="cita_id" id= "cita_id" class="form-control" required>
+                    <select name="tipoCita" id= "tipoCita" class="form-control" required>
                         <option value="">--Cita--</option>
-                        @foreach ($citas as $cita)
-                        <option value="{{ $cita->id }}"> {{ $cita->descripcion}}</option>  
+                        @foreach ($arrayTratamientos as $a)
+                        <option value="{{ $a}}"> {{ $a}}</option>  
                         @endforeach
                     </select>    
                 </div>
@@ -39,9 +39,9 @@
 </div>
                
                 
-</div>
+</div><br><br>
   
     <div class="form-group">
           
-            {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}
+            {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-success']) }}
         </div>

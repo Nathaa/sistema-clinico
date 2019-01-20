@@ -6,11 +6,11 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 Registros de cobros
+                 Registros de pagos
                  @can('cuentas.create')
                  <a href="{{ route('cuentas.create') }}" 
                  class="btn btn-sm btn-primary pull-right">
-                 Crear
+                 Nuevo pago
                 </a>
                  @endcan
                 </div>
@@ -50,7 +50,7 @@
                                  <td width="10px">
                                         @can('cuentas.destroy')
                                           {!! Form::open(['route' => ['cuentas.destroy', $cuenta->id],
-                                          'method' =>'DELETE','onsubmit' => 'return confirm("¿Desea eliminar la cuenta?")']) !!}
+                                          'method' =>'DELETE','onsubmit' => 'return confirm("¿Desea eliminar la pago?")']) !!}
                                           <button class="btn btn-sm btn-danger">
                                               Eliminar
                                           </button>

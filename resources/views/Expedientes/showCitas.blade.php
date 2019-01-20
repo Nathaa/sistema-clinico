@@ -16,7 +16,7 @@
                         <thead>
                             <tr>
                                 
-                                <th>No.</th>
+                                
                                 <th>Descripción</th>
                                 <th>Fecha [Año-Mes-Día]</th>
                                 <th>Hora</th>
@@ -27,7 +27,7 @@
                    <tbody>
                     @foreach($citas as $cita)
                         <tr>
-                            <td>{{ $cita->id }}</td>
+                           
                             <td> {{ $cita->descripcion }}</td>
                             <td> {{ $cita->fecha }}</td>
                             <td> {{ $cita->hora}}</td>

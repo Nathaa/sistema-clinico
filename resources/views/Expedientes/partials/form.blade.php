@@ -1,9 +1,3 @@
-{!! csrf_field() !!}
-<p><label for="avatar">
-  <input type="file" name="avatar">
-  {!! $errors->first('avatar','<span class=error>:message</span>') !!}
-</label></p>
-
 
 <div class="form-group">
         {{ Form::label('name', 'Nombre')}}
@@ -64,13 +58,15 @@
         {{ Form::text('alergias',null,['class' => 'form-control']) }}
 </div>
 
-
-
-
+{!! csrf_field() !!}
+<label for="avatar">Fotografía del paciente</label>
+  <input type="file" name="avatar">
+  {!! $errors->first('avatar','<span class=error>:message</span>') !!}
+<br><br>
 
     
 <div class="form-group">
           
-            {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}
+            {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-success']) }}
 </div>
 

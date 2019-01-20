@@ -6,6 +6,7 @@ use App\Citas;
 use App\Cuentas;
 use App\Expedientes;
 use Illuminate\Http\Request;
+use App\Http\Requests\cuentaRequest;
 
 class cuentaController extends Controller
 {
@@ -30,8 +31,10 @@ class cuentaController extends Controller
     {
         $citas = Citas::get();
         $expedientes = Expedientes::orderBy('name', 'asc')->get();
+        $arrayTratamientos = array('Consulta', 'Limpieza dental', 'Extracción de piezas', 'Endodoncia',
+        'Ortodoncia', 'Prótesis', 'Implantes', 'Otro', );
 
-        return view('cuentas.create', compact('citas', 'expedientes'));
+        return view('cuentas.create', compact('citas', 'expedientes', 'arrayTratamientos'));
     }
 
     /**
@@ -41,7 +44,7 @@ class cuentaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(cuentaRequest $request)
     {
         $cuenta = Cuentas::create($request->all());
 
@@ -72,8 +75,10 @@ class cuentaController extends Controller
     {
         $citas = Citas::get();
         $expedientes = Expedientes::get();
+        $arrayTratamientos = array('Consulta', 'Limpieza dental', 'Extracción de piezas', 'Endodoncia',
+        'Ortodoncia', 'Prótesis', 'Implantes', 'Otro', );
 
-        return view('cuentas.edit', compact('cuenta', 'citas', 'expedientes'));
+        return view('cuentas.edit', compact('cuenta', 'citas', 'expedientes', 'arrayTratamientos'));
     }
 
     /**

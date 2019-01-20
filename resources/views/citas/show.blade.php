@@ -1,6 +1,6 @@
-@extends('layouts.admi')
+@extends('layouts.admin')
 
-@section('content')
+@section('contenedor')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -10,10 +10,10 @@
                 </div>
 
                 <div class="panel-body">
-                  <p><strong>Descripción: </strong> {{ $cita->descripcion }}</p>
-                  <p><strong>Fecha de Cita: </strong> {{ $cita->fecha }}</p>
+                  <p><strong>Descripcion de la cita: </strong> {{ $cita->descripcion }}</p>
+                  <p><strong>Fecha: </strong> {{ $cita->fecha }}</p>
                   <p><strong>Hora: </strong> {{ $cita->hora }}</p>
-                  <p><strong>Paciente: </strong> {{ $cita->expediente->name }}</p>
+                  
                   
                 </div>
             </div>
