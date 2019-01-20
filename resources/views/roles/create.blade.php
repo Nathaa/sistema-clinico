@@ -1,7 +1,7 @@
-@extends('layouts.admi')
+@extends('layouts.admin')
 
 
-@section('content')
+@section('contenedor')
 @if(count($errors)>0)
         <div class="alert alert-danger" role="alert">
             <ul>

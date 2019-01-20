@@ -269,42 +269,45 @@
       </div>
      
       <!-- sidebar menu: : style can be found in sidebar.less -->
+      <!-- Sidebar Menu -->
+      
       <ul class="sidebar-menu" data-widget="tree">
-            <li class="header">Menú</li>
-            <!-- Optionally, you can add icons to the links -->
-
-            <li><a href="{{ route('expedientes.index') }}"><i class="fa fa-link"></i> <span>Expedientes</span></a></li> 
-            <li><a href="{{ route('citas.index') }}"><i class="fa fa-link"></i> <span>Citas</span></a></li>
-            <li><a href="{{ url('/home2') }}"><i class="fa fa-link"></i> <span>Calendario</span></a></li>
-            
-            <li class="treeview">
-                <a href="#"><i class="fa fa-link"></i> <span>Gestión de pagos</span>
-                  <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                  <li><a href="{{route('cuentas.index')}}">Registro de pagos</a></li>
-                  <li><a href="{{route('consultaPagos.index')}}">Consulta de pagos</a></li>
-                </ul>
-              </li>
-            
-            <li class="treeview">
-              <a href="#"><i class="fa fa-link"></i> <span>Gestión de usuarios</span>
-                <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="{{route('users.index')}}">Usuarios Registrados</a></li>
-                <li><a href="{{route('roles.index')}}">Roles de Usuarios</a></li>
-              </ul>
-            </li>
+        <li class="header">Opciones</li>
+        <!-- Optionally, you can add icons to the links -->
+       
+        <li><a href="{{ route('citas.index') }}"><i class="fa fa-link"></i> <span>Citas</span></a></li>
+        <li><a href="{{ url('/home2') }}"><i class="fa fa-link"></i> <span>Calen</span></a></li>
+        <li><a href="{{route('expedientes.index')}}"><i class="fa fa-link"></i> <span>Expediente</span></a></li>
+       
+        <li class="treeview">
+            <a href="#"><i class="fa fa-link"></i> <span>Cobros a Pacientes</span>
+              <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="{{route('cuentas.index')}}">Cuentas</a></li>
+              <li><a href="{{route('consultaPagos.index')}}">Consulta de Pagos</a></li>
+            </ul>
+          </li>
+        
+        <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>Usuario</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('users.index')}}">Usuarios Registrados</a></li>
+            <li><a href="{{route('roles.index')}}">Roles de Usuarios</a></li>
           </ul>
-          <!-- /.sidebar-menu -->
-        </section>
-        <!-- /.sidebar -->
-      </aside>
+        </li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->

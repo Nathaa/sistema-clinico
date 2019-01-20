@@ -8,7 +8,7 @@
 
 <form class="" action="/evento/create" method="post" >
     {{ csrf_field() }}
-<div class="modal" tabindex="-1" role="dialog" id="mdlEvent">
+   <div class="modal fade" tabindex="-1" role="dialog" id="mdlEvent">
         <div class="modal-dialog" role="document" style="width:80%">
           <div class="modal-content">
             <div class="modal-header">
@@ -46,10 +46,11 @@
                 </div>
             </div>
                           
-            <div class="modal-footer">
-            
-              <button type="submit" class="btn btn-primary">Save changes</button>
-            </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+              </div>
+
+
           </div>
         </div>
       </div>

@@ -28,7 +28,7 @@ class CitaController extends Controller
      */
     public function create()
     {
-        $expedientes = Expedientes::orderBy('name', 'asc')->get();
+        //$expedientes = Expedientes::orderBy('name', 'asc')->get();
 
         return view('citas.create', compact('expedientes'));
     }
