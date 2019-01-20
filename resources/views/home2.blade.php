@@ -1,4 +1,3 @@
-
 @extends('layouts.admin')
 @section('contenedor')
 <div class="col-md-12">

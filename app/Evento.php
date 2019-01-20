@@ -4,10 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Citas extends Model
+class Evento extends Model
 {
-    public $table = 'citas';
-    protected $fillable = [
-        'descripcion', 'fechai_nicio', 'fecha_final', 'color',
-    ];
+    //
 }

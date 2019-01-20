@@ -22,7 +22,8 @@ $("#fullCalendar").fullCalendar({
   header: {
     left: 'prev,next today',
     center: 'title',
-    right: 'month,basicWeek,basicDay,listDay'
+    right: 'month,basicWeek,basicDay,listDay'                
+    
   },
   events: evt,
   dayClick: function(date,jsEvent,view,resourceObj){

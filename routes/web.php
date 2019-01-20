@@ -23,10 +23,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //ruta protegida solo se se entra el inisiar sesion
-Route::get('/home2', 'Home2Controller@index')->name('home2');
 
-Route::get('/evento/get', 'Home2Controller@get_events')->name('holaa');
-Route::post('/evento/create', 'Home2Controller@create_events')->name('home2');
+
+
 //Routes
 
 //verifica si estas autentificado

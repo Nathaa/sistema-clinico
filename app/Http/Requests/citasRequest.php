@@ -24,10 +24,7 @@ class citasRequest extends FormRequest
     public function rules()
     {
         return [
-            'descripcion' => 'max:120|required',
-            'fecha' => 'required',
-            'hora' => 'max:120|required',
-            'expediente_id' => 'numeric|min:1|max:1000|required',
+            
         ];
     }
 }

@@ -1,17 +1,31 @@
 <div class="form-group">
-    {{ Form::label('descripcion', 'Descripción de la cita')}}
-    {{ Form::text('descripcion',null,['class' => 'form-control']) }}
+    {{ Form::label('title', 'Descripción de la cita')}}
+    {{ Form::text('title',null,['class' => 'form-control']) }}
 </div>
 
 <div class="form-group">
-        {{ Form::label('fecha', 'Fecha')}}
-        {{ Form::date('fecha',null,['class' => 'form-control']) }}
+        {{ Form::label('start', 'Fecha de inicio')}}
+        {{ Form::date('start',null,['class' => 'form-control']) }}
 </div>
 
 <div class="form-group">
-        {{ Form::label('hora', 'Hora')}}
-        {{ Form::text('hora',null,['class' => 'form-control']) }}
+        {{ Form::label('end', 'Fecha Final')}}
+        {{ Form::date('end',null,['class' => 'form-control']) }}
 </div>
+
+
+<div class="form-group">
+        {{ Form::label('hora_inicio', 'Hora de Inicio')}}
+        {{ Form::time('hora_inicio',null,['class' => 'form-control']) }}
+</div>
+
+
+<div class="form-group">
+        {{ Form::label('hora_final', 'Hora Final')}}
+        {{ Form::time('hora_final',null,['class' => 'form-control']) }}
+</div>
+
+
 
 <div class="form-group">
                 {!! Form::label('expediente_id', 'Seleccione el paciente') !!}
@@ -26,9 +40,6 @@
                
                 
 </div>
-
-
-
 
 
 <div class="form-group">

@@ -28,7 +28,7 @@
                         @foreach($citas as $cita)
                         <tr>
                             <td>{{ $cita->id }}</td>
-                            <td>{{ $cita->descripcion }}</td>
+                            <td>{{ $cita->title }}</td>
                             <td width="10px">
                                @can('citas.show')
                                  <a href="{{ route('citas.show', $cita->id) }}"
