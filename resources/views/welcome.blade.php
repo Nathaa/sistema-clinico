@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My courses app</title>
+    <title>Diseñando sonrisas</title>
     <meta name="description" content="Demo of A Free Coming Soon Bootstrap 4 Template by TemplateFlip.com."/>
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
@@ -31,12 +31,12 @@
     <div class="cover-container">
       <div class="masthead clearfix">
         <div class="inner">
-          <h3 class="masthead-brand">Gestión de citas dentales</h3>
+          <h3 class="masthead-brand">Diseñando sonrisas</h3>
           <nav class="nav nav-masthead">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Pagina principal</a>
+                        <a href="{{ url('/home') }}">Página principal</a>
                     @else
                         <a href="{{ route('register') }}">Registrarse</a>
                     @endauth
@@ -46,8 +46,8 @@
           </nav>
         </div>
       </div><br>      <div class="inner cover">
-        <h1 class="cover-heading">Sistema Clinico</h1>
-        <p class="lead cover-copy">Bienvenido al sistema de gestion de citas dentales y control de pagos.</p>
+        <h1 class="cover-heading">Sistema de gestión clínico</h1>
+        <p class="lead cover-copy">Bienvenido al sistema de gestion de expedientes, citas y control de pagos.</p>
         @if (Route::has('login'))
         <div class="top-right links">
             @auth
@@ -61,14 +61,14 @@
       </div>
       <div class="mastfoot">
         <div class="inner">
-          <p>&copy; Your Company. Design: <a href="https://templateflip.com/" target="_blank">TemplateFlip</a>.</p>
+          <p>&copy; DiseñandoSonrisas</p>
         </div>
       </div>
       <div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="InicioDeSesion">Inicio de Sesion:</h5>
+              <h5 class="modal-title" id="InicioDeSesion">Inicio de Sesión:</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -81,7 +81,7 @@
 
 
                      <div class="col">
-                         <label class="col-form-label">{{ __('Correo Electronico') }}</label>
+                         <label class="col-form-label">{{ __('Correo Electrónico') }}</label>
                          <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
         
