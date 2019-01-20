@@ -8,12 +8,32 @@
 $(function () {
 
   'use strict';
+
+  var evt=[];
+  $.ajax({
+    url:'/evento/get',
+    type:"GET",
+    dataType:"JSON",
+    async:false
+  }).done(function(r){
+    evt= r;
+  })
 $("#fullCalendar").fullCalendar({
   header: {
     left: 'prev,next today',
     center: 'title',
-    right: 'month,basicWeek,basicDay'
+    right: 'month,basicWeek,basicDay,listDay'
   },
+  events: evt,
+  dayClick: function(date,jsEvent,view,resourceObj){
+
+    $("#fechai_nicio").val(date.format());
+    $("#mdlEvent").modal();
+    
+   alert('Date:'+ date.format());
+   alert('Resource ID'+ resourceObj.id);
+
+  }
 });
 
   // Make the dashboard widgets sortable Using jquery UI
@@ -124,7 +144,7 @@ $("#fullCalendar").fullCalendar({
   });
 
   // The Calender
-  $('#calendar').datepicker();
+  $('#fecha_final').datepicker({format:'yyyy-mm-dd'});
 
   // SLIMSCROLL FOR CHAT WIDGET
   $('#chat-box').slimScroll({

@@ -10,6 +10,7 @@ dependencies of your project. NPM will not install them automatically. (#4136, #
 New Features:
 - events from a Google Calendar event source will receive extended props (#4123)
 - export more classes and util functions (#4124)
+- new locales: zh-hk (#4266), be (#4274)
 
 Bugfixes:
 - not accepting dayClicks/selects because of overflow-x:hidden on html/body (#3615)

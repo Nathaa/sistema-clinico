@@ -14,10 +14,9 @@ class CreateCitasTable extends Migration
         Schema::create('citas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('descripcion');
-            $table->date('fecha');
-            $table->string('hora');
-            $table->integer('expediente_id');
-            $table->foreign('expediente_id')->references('id')->on('expedientes');
+            $table->dateTime('fechai_nicio');
+            $table->dateTime('fecha_final');
+            $table->string('color');
             $table->timestamps();
         });
     }
