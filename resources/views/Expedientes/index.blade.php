@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 Expedientes
+                <b>Expedientes</b>
                  @can('expedientes.create')
                  <a href="{{ route('expedientes.create') }}" 
                  class="btn btn-sm btn-primary pull-right">
@@ -19,7 +19,7 @@
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
-                                <th width="10px">ID</th>
+                                <th width="10px"></th>
                                 <th>Nombre</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>

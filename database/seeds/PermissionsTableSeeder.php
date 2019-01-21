@@ -113,13 +113,13 @@ class PermissionsTableSeeder extends Seeder
         ]);
 
         Permission::create([
-            'name' => 'Navegar cuentas expedientes',
+            'name' => 'Ver los pagos de paciente',
             'slug' => 'expedientes.showCuentas',
             'description' => 'Lista y navega todos las cuentas en el expedientes del sistema',
         ]);
 
         Permission::create([
-            'name' => 'Ver citas en expediente',
+            'name' => 'Ver citas del paciente',
             'slug' => 'expedientes.showCitas',
             'description' => 'ver en detalle cada cita en el expediente del sistema',
         ]);
@@ -141,5 +141,90 @@ class PermissionsTableSeeder extends Seeder
             'slug' => 'expedientes.destroy',
             'description' => 'Eliminar cualquier dato de expedientes del sistema',
         ]);
+
+
+        //cuentas
+
+        Permission::create([
+            'name' => 'creacion de cuentas',
+            'slug' => 'cuentas.create',
+            'description' => 'Crear una cuenta de pacientes de la clinica',
+        ]);
+
+
+        Permission::create([
+            'name' => 'Navegar Cuentas',
+            'slug' => 'cuentas.index',
+            'description' => 'Crear y navega las cuentas almacenadas ',
+        ]);
+
+        Permission::create([
+            'name' => 'ver destalle de Cuentas',
+            'slug' => 'cuentas.show',
+            'description' => 'ver en detalle cada usuario del sistema',
+        ]);
+
+        Permission::create([
+            'name' => 'editar de Cuentas',
+            'slug' => 'cuentas.edit',
+            'description' => 'Editar cualquier dato de usuario del sistema',
+        ]);
+
+        Permission::create([
+            'name' => 'eliminar Cuentas',
+            'slug' => 'cuentas.destroy',
+            'description' => 'Eliminar una pago de la clinica',
+        ]);
+
+
+        //consulta pagos
+
+        Permission::create([
+            'name' => 'creacion de consulta de pago del paciente',
+            'slug' => 'consultaPagos.create',
+            'description' => 'Crear una consulta de los pagos con filtro de fecha',
+        ]);
+
+        Permission::create([
+            'name' => 'Navegar consulta de pagos del paciente ',
+            'slug' => 'consultaPagos.index',
+            'description' => 'navega las consulta de pagos almacenadas filtrada por fechas ',
+        ]);
+
+        Permission::create([
+            'name' => 'ver destalle de consulta de pagos del paciente',
+            'slug' => 'consultaPagos.show',
+            'description' => 'ver en detalle cada consulta de pago de la clinica filtrada por fechas',
+        ]);
+
+        Permission::create([
+            'name' => 'eliminar consulta de Pagos ',
+            'slug' => 'consultaPagos.destroy',
+            'description' => 'Eliminar una consulta de pago de la clinica filtrada por fecha',
+        ]);
+
+         //consulta pagos pacientes
+
+        
+
+        Permission::create([
+            'name' => 'Navegar historial de pagos de la clinica',
+            'slug' => 'consultaPagoPaciente.index',
+            'description' => 'navega las consulta de pagos almacenadas con filtracion de paciente ',
+        ]);
+
+        Permission::create([
+            'name' => 'ver destalle de pagos por paciente ',
+            'slug' => 'consultaPagoPaciente.show',
+            'description' => 'ver en detalle la consulta de pago filtrada por pacientes',
+        ]);
+
+        Permission::create([
+            'name' => 'eliminar consulta de Pago por paciente',
+            'slug' => 'consultaPagoPaciente.destroy',
+            'description' => 'Eliminar la consulta de pago filtrada por paciente',
+        ]);
+
+
     }
 }

@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 Consultas de pagos por paciente
+                 <b>Consultas de pagos por paciente</b>
                  @can('consultaPagos.create')
                  <a href="{{ route('consultaPagos.create') }}" 
                  class="btn btn-sm btn-primary pull-right">
@@ -53,8 +53,10 @@
                         </td>
                         </tr>
                         @endforeach
+
+                        
                     </tbody>
-                    </table>
+                     </table>
                     {{ $consultaspagospacientes->render() }}
                 </div>
             </div>

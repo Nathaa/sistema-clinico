@@ -52,7 +52,7 @@
     <!-- Logo -->
     <a href="{{ route('home') }}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>VER</b></span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>Diseñando sonrisas</b></span>
     </a>
@@ -76,7 +76,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle" >
+                        <img src="dist/img/user2-160x160.jpg" class="img-circle" class="img-circle" >
                       </div>
                       <h4>
                         Support Team
@@ -219,8 +219,8 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              
-              <span class="hidden-xs">{{ Auth::user()->name }}</span>
+    
+              <i class="glyphicon glyphicon-user"></i><span class="hidden-xs">{{ Auth::user()->name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -253,56 +253,80 @@
       </div>
     </nav>
   </header>
+  
+  
+  
+
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-      <!-- Sidebar user panel -->
+       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg"  alt="User Image">
+          <img src="{{asset('img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+          
+           
         </div>
         <div class="pull-left info">
           <p>{{ Auth::user()->name }}</p>
-          <a href="#"><i class="fa fa-circle text-success"></i>En línea</a>
+          <!-- Status -->
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
+
+      <!-- search form (Optional) -->
      
-      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <!-- /.search form -->
+
       <!-- Sidebar Menu -->
-      
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Menú</li>
         <!-- Optionally, you can add icons to the links -->
 
-        <li><a href="{{route('expedientes.index')}}"><i class="fa fa-link"></i> <span>Expediente</span></a></li>
-        <li><a href="{{ route('citas.index') }}"><i class="fa fa-link"></i> <span>Citas</span></a></li>
-        
+        @can('expedientes.index')
+        <li><a href="{{route('expedientes.index')}}"><i class="glyphicon glyphicon-folder-open"></i><i class="fa fa-link"></i> <span>Expediente</span></a></li>
+       @endcan
+       @can('citas.index')
+        <li><a href="{{ route('citas.index') }}"><i class="glyphicon glyphicon-time"></i><i class="fa fa-link"></i> <span>Citas</span></a></li>
+       @endcan
         
         
         
        
-        <li class="treeview">
-            <a href="#"><i class="fa fa-link"></i> <span>Registro de pagos</span>
+      <li class="treeview">
+        @can('consultaPagos.index')
+          @can('cuentas.index')
+            <a href="#"><i class="fa fa-link"></i><i class="glyphicon glyphicon-usd"></i><span>Registro de pagos</span>
               <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
             </a>
+        
             <ul class="treeview-menu">
-              <li><a href="{{route('cuentas.index')}}">Pagos</a></li>
-              <li><a href="{{route('consultaPagos.index')}}">Consulta de pagos</a></li>
+            
+              <li><a href="{{route('cuentas.index')}}"><i class="glyphicon glyphicon-piggy-bank"></i>Pagos</a></li>
+           @endcan
+             
+              <li><a href="{{route('consultaPagos.index')}}"><i class="glyphicon glyphicon-eye-open"></i>Consulta de pagos</a></li>
+        @endcan
             </ul>
           </li>
         
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Usuario</span>
+        @can('roles.index')
+          @can('users.index')
+          <a href="#"><i class="fa fa-link"></i><i class="glyphicon glyphicon-user"></i> <span>Usuario</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{route('users.index')}}">Usuarios Registrados</a></li>
-            <li><a href="{{route('roles.index')}}">Roles de Usuarios</a></li>
+        
+            <li><a href="{{route('users.index')}}"><i class="glyphicon glyphicon-pencil"></i>Usuarios Registrados</a></li>
+           @endcan
+            <li><a href="{{route('roles.index')}}"><i class="glyphicon glyphicon-tasks"></i>Roles de Usuarios</a></li>
+          @endcan
           </ul>
         </li>
       </ul>

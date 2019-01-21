@@ -34,7 +34,7 @@ class expedientesRequest extends FormRequest
             'tratamiento' => 'max:120|required',
             'diagnostico' => 'max:120|required',
             'alergias' => 'max:120|required',
-            'avatar' => 'required|image',
+            'avatar' => 'image',
         ];
     }
 }

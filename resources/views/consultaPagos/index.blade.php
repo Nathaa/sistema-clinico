@@ -8,7 +8,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                 
-                 Historial de consulta de pagos por fecha
+                <b>Historial de consulta de pagos por fecha</b>
 
                  
                    

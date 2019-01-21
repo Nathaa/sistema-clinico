@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\Citas;
+
 use App\Expedientes;
 use Illuminate\Http\Request;
 use App\Http\Requests\citasRequest;
@@ -16,6 +17,7 @@ class CitaController extends Controller
         //$citas = Citas::orderBy('fechai_nicial', 'desc')->paginate();
         //$citas = Citas::orderBy('fechai_final', 'desc')->paginate();
         $citas = Citas::paginate();
+       
         return view('citas.index', compact('citas'));
     }
     /**

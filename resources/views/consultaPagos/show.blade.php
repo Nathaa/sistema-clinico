@@ -37,7 +37,7 @@
                 <p>Pagos efectuados :<strong>{{ $cantidad }}</strong></p>
                 <p>Monto Total :<strong>${{ $montoTotal }}</strong></p>
                 </div>
-
+                <a href="{{ route('consultaPagos.index') }}" class="btn btn-sm btn-danger" >Ver historial de consultas por fechas</a>
             </div>
            
         </div>

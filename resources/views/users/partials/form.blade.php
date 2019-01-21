@@ -22,4 +22,5 @@
 <div class="form-group">
       
         {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}
+         <a href="{{ route('users.index') }}" class="btn btn-sm btn-primary" > Regresar atras</a>
     </div>

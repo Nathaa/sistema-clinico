@@ -19,7 +19,9 @@ class CreateCitasTable extends Migration
             $table->time('hora_inicio');
             $table->time('hora_final');
             $table->string('color')->nullable();
+            $table->integer('expediente_id');
             $table->foreign('expediente_id')->references('id')->on('expedientes');
+          
             $table->timestamps();
         });
     }

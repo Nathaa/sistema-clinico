@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 Registros de pagos
+                 <b>Registros de pagos</b>
                  @can('cuentas.create')
                  <a href="{{ route('cuentas.create') }}" 
                  class="btn btn-sm btn-primary pull-right">
@@ -19,7 +19,6 @@
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
-                                <th width="10px">ID</th>
                                 <th>Tratamiento aplicado</th>
                                 <th>Monto</th>
                                 <th colspan="3">&nbsp;</th>
@@ -28,10 +27,10 @@
                     <tbody>
                         @foreach($cuentas as $cuenta)
                         <tr>
-                            <td>{{ $cuenta->id }}</td>
+                        
                             <td>{{ $cuenta->descripcion }}</td>
-                            <td>$ {{ $cuenta->monto }}</td>
-                            <td width="10px">
+                            <td>${{ $cuenta->monto }}</td>
+                             <td width="10px">
                                @can('cuentas.show')
                                  <a href="{{ route('cuentas.show', $cuenta->id) }}"
                                  class="btn btn-sm btn-default">

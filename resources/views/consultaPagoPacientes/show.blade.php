@@ -7,7 +7,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 Pagos del paciente
+                 <b>Pagos del paciente</b>
                 </div>
                 
                 

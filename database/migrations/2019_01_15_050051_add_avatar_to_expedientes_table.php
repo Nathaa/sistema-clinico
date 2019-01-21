@@ -22,7 +22,7 @@ class AddAvatarToExpedientesTable extends Migration
     public function down()
     {
         Schema::table('expedientes', function (Blueprint $table) {
-            $table->dropColumn('avatar');
+            $table->dropColumn('avatar')->nullable();
         });
     }
 }

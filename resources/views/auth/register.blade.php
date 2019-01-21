@@ -5,8 +5,8 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Registrar</div>
-                <body style="background-color:#D6DBDF;">
+                <div class="panel-heading"><b>Registrar</b></div>
+                <body style="background-color:#F2E5D3">
                 <div class="panel-body">
                         
                             

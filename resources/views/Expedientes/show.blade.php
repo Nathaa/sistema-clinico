@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 Expediente del paciente
+                 <b>Expediente del paciente</b>
                 </div>
 
                 <div class="panel-body">
@@ -27,6 +27,7 @@
                         
                         <a href="{{ route('expedientes.showCitas', $expediente->id) }}" class="btn btn-sm btn-danger" >Ver citas</a>
                         <a href="{{ route('expedientes.showCuentas', $expediente->id) }}" class="btn btn-sm btn-danger" >Ver cuentas</a>
+                        <a href="{{ route('expedientes.index') }}" class="btn btn-sm btn-success" > Regresar atras</a>
                        
                 </div>
             </div>

@@ -11,4 +11,5 @@
 <div class="form-group">
           
             {{ Form::submit('Consultar', ['class' => 'btn btn-sm btn-success']) }}
+            <a href="{{ route('consultaPagos.index') }}" class="btn btn-sm btn-success" > Regresar atras</a>
 </div>

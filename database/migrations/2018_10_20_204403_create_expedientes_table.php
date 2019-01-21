@@ -13,11 +13,11 @@ class CreateExpedientesTable extends Migration
     {
         Schema::create('expedientes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->date('nacimiento');
             $table->integer('edad');
             $table->string('dirreccion');
-            $table->string('telefono');
+            $table->string('telefono')->unique();
             $table->string('sexo');
             $table->string('ocupacion');
             $table->string('tratamiento');

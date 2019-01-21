@@ -1,12 +1,13 @@
 @extends('layouts.admin')
 
 @section('contenedor')
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 Consultas de pagos por rangos de fecha
+                <b>Consultas de pagos por rangos de fecha</b>
                 </div>
 
                 <div class="panel-body">
@@ -22,23 +23,28 @@
         </div>
     </div>
  <br><br><br><br>
+ 
     <div class="row">
+    
         <div class="col-md-8 col-md-offset-2">
+            
             <div class="panel panel-default">
+            
                 <div class="panel-heading">
                  Consultas de pagos por paciente
                 </div>
 
                 <div class="panel-body">
+                
                  {!! Form::open(['route' => 'consultaPagoPacientes.store']) !!}
                   
+               
                  @include('consultaPagoPacientes.partials.form')
 
                  {!! Form::close() !!}
                 </div>
-
-                
             </div>
+           
         </div>
     </div>
 </div>
