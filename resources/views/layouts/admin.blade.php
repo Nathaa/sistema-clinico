@@ -283,14 +283,29 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Menú</li>
         <!-- Optionally, you can add icons to the links -->
-
+       
         @can('expedientes.index')
         <li><a href="{{route('expedientes.index')}}"><i class="glyphicon glyphicon-folder-open"></i><i class="fa fa-link"></i> <span>Expediente</span></a></li>
        @endcan
-       @can('citas.index')
-        <li><a href="{{ route('citas.index') }}"><i class="glyphicon glyphicon-time"></i><i class="fa fa-link"></i> <span>Citas</span></a></li>
-       @endcan
         
+       <li class="treeview">
+        @can('home2')
+          @can('citas.index')
+            <a href="#"><i class="fa fa-link"></i><i class="glyphicon glyphicon-list-alt"></i><span>Registro de Citas</span>
+              <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+        
+            <ul class="treeview-menu">
+            
+              <li><a href="{{route('citas.index')}}"><i class="glyphicon glyphicon-time"></i>Citas</a></li>
+           @endcan
+             
+              <li><a href="{{route('home2')}}"><i class="glyphicon glyphicon-calendar"></i>Calendario de Citas</a></li>
+        @endcan
+            </ul>
+          </li>
         
         
        

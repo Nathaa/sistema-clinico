@@ -18,12 +18,12 @@
                 <div class="row">
                     <div class="col-md-2">
                         <label for="">Descripcion</label>
-                        <input type="text" name"descripcion" id="descripcion" class="form-control">
+                        <input type="text" name"title" id="title" class="form-control">
              
                     </div>
                     <div class="col-md-3">
                             <label for="">Fecha inicio</label>
-                            <input type="text" name"fechai_nicio"  id="fechai_nicio" readonly class="form-control">
+                            <input type="text" name"start"  id="start" readonly class="form-control">
                  
                     </div>
                     <div class="col-md-2">
@@ -38,7 +38,7 @@
 
                         <div class="col-md-2">
                                 <label for="">FechaFinal</label>
-                                <input type="text" name"fecha_final" id="fecha_final" readonly class="form-control">
+                                <input type="text" name"end" id="end" readonly class="form-control">
                      
                         </div>                        
 

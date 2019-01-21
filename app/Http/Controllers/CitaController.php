@@ -17,7 +17,7 @@ class CitaController extends Controller
      */
     public function index(Request $request)
     {
-        $citas = Citas::start($request->get('start'))->orderBy('start', 'desc')->paginate();
+        $citas = Citas::start($request->get('start'))->orderBy('id', 'asc')->paginate();
         //$citas = Citas::orderBy('fechai_final', 'desc')->paginate();
 
         return view('citas.index', compact('citas'));
@@ -28,11 +28,14 @@ class CitaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $input = $request->start;
+
+        $input['start'] = $input['start'].''.date('H:m:s', strtotime($input['hora_inicio']));
         $expedientes = Expedientes::orderBy('name', 'asc')->get();
 
-        return view('citas.create', compact('expedientes'));
+        return view('citas.create', compact('expedientes', 'input'));
     }
 
     /**

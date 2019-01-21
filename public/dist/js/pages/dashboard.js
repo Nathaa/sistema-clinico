@@ -11,7 +11,7 @@ $(function () {
 
   var evt=[];
   $.ajax({
-    url:'/evento/get',
+  url:'/evento/get',
     type:"GET",
     dataType:"JSON",
     async:false
@@ -28,12 +28,11 @@ $("#fullCalendar").fullCalendar({
   events: evt,
   dayClick: function(date,jsEvent,view,resourceObj){
 
-    $("#fechai_nicio").val(date.format());
+    $("#start").val(date.format());
     $("#mdlEvent").modal();
     
    alert('Date:'+ date.format());
    alert('Resource ID'+ resourceObj.id);
-
   }
 });
 
@@ -145,7 +144,7 @@ $("#fullCalendar").fullCalendar({
   });
 
   // The Calender
-  $('#fecha_final').datepicker({format:'yyyy-mm-dd'});
+  $('#end').datepicker({format:'yyyy-mm-dd'});
 
   // SLIMSCROLL FOR CHAT WIDGET
   $('#chat-box').slimScroll({
