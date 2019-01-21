@@ -21,12 +21,21 @@
                 </div>
 
                 <div class="panel-body">
+                        {!! Form::open(['route'=>'citas.index','method'=>'GET','class'=>'navbar-form navbar-left pull-rigth','role'=>'search']) !!}  
+                        <div class="form-group">
+                              {!! Form::date('start',null,['class'=>'form-control','placeholder'=>'Fecha de Citas']) !!}
+                            </div>
+                            <button type="submit" class="btn btn-default">Buscar</button>
+                            {!! Form::close() !!}
+                          </form>
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
                                  <th width="10px"></th>
                                 <th>Descripción</th>
                                 <th>Fecha</th>
+                                <th>Hora inicial</th>
+                                <th>HoraFinal</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
@@ -37,6 +46,8 @@
                             <td>{{ $cita->id }}</td>
                             <td>{{ $cita->title }}</td>
                             <td>{{ $cita->start }}</td>
+                            <td>{{ $cita->hora_inicio }}</td>
+                            <td>{{ $cita->hora_final }}</td>
                           
                                
                                <td width="10px">

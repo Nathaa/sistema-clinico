@@ -14,17 +14,18 @@ class CreateCitasTable extends Migration
         Schema::create('citas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->dateTime('start');
-            $table->dateTime('end');
+            $table->date('start');
+            $table->date('end');
             $table->time('hora_inicio');
             $table->time('hora_final');
             $table->string('color')->nullable();
             $table->integer('expediente_id');
             $table->foreign('expediente_id')->references('id')->on('expedientes');
-          
+
             $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      */

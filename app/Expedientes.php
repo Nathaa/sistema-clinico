@@ -15,4 +15,11 @@ class Expedientes extends Model
     {
         return $this->hasMany(Citas::class);
     }
+
+    public function scopeName($query, $name)
+    {
+        if ($name != '') {
+            $query->where('name', 'LIKE', "%$name%");
+        }
+    }
 }

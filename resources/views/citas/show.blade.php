@@ -8,16 +8,14 @@
                 <div class="panel-heading">
                  <b>Informacion de Cita</b>
                 </div>
-
                 <div class="panel-body">
                   <p><strong>Descripcion de la cita: </strong> {{ $cita->title }}</p>
                   <p><strong>Fecha: </strong> {{ $cita->start }}</p>
                   <p><strong>Hora: </strong> {{ $cita->hora_inicio }}</p>
                    <p><strong>Hora: </strong> {{ $cita->end }}</p>
-                  
+                   <p><strong>Hora: </strong> {{ $cita->expediente->name }}</p>
                     <a href="{{ route('citas.index') }}" class="btn btn-sm btn-success" > Regresar atras</a>
-                      
-                  
+                   
                 </div>
             </div>
         </div>

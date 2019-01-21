@@ -6,7 +6,6 @@ use App\Citas;
 use App\Cuentas;
 use App\Expedientes;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\expedientesRequest;
 
 class expedienteController extends Controller
@@ -16,9 +15,9 @@ class expedienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $expedientes = Expedientes::orderBy('id', 'asc')->paginate();
+        $expedientes = Expedientes::name($request->get('name'))->orderBy('id', 'asc')->paginate();
 
         return view('expedientes.index', compact('expedientes'));
     }

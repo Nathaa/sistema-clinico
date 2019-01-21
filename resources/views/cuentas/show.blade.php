@@ -14,6 +14,8 @@
                   <p><strong>Monto: </strong> $ {{ $cuenta->monto }}</p>
                   <p><strong>Fecha de pago: </strong>  {{ $cuenta->fechaPago }}</p>
                   <p><strong>Motivo de la cita: </strong>  {{ $cuenta->tipoCita }}</p>
+                  <p><strong>Motivo de la cita: </strong>  {{ $cuenta->expediente->name }}</p>
+                  
                    <a href="{{ route('cuentas.index') }}" class="btn btn-sm btn-success" > Regresar atras</a>
                    
                 </div>

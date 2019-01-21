@@ -16,6 +16,14 @@
                 </div>
 
                 <div class="panel-body">
+                        
+                           {!! Form::open(['route'=>'expedientes.index','method'=>'GET','class'=>'navbar-form navbar-left pull-rigth','role'=>'search']) !!}  
+                            <div class="form-group">
+                                  {!! Form::text('name',null,['class'=>'form-control','placeholder'=>'Nombre de Paciente']) !!}
+                                </div>
+                                <button type="submit" class="btn btn-default">Buscar</button>
+                                {!! Form::close() !!}
+                              </form>
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
